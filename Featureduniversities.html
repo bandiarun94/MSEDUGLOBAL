@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS EDU GLOBAL - Featured Universities</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* === FEATURED UNIVERSITIES SECTION === */
+        .featured-universities-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .featured-universities-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/background-image.jpg'); /* Your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.05; /* Adjust opacity as needed */
+            z-index: 0;
+        }
+        
+        .universities-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        
+        .section-header h2 span {
+            color: #2f5aae;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .universities-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .universities-info {
+            flex: 1;
+            max-width: 400px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .universities-info h3 {
+            font-size: 28px;
+            color: #2f5aae;
+            margin-bottom: 15px;
+        }
+        
+        .universities-info h3 span {
+            color: #f59e0b;
+        }
+        
+        .universities-info p {
+            color: #6b7280;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        .benefits-list {
+            margin-bottom: 25px;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: #1f2937;
+            font-size: 15px;
+        }
+        
+        .benefits-list li i {
+            color: #2f5aae;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2f5aae;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: #f59e0b;
+            transform: scale(1.05);
+        }
+        
+        .universities-carousel {
+            flex: 2;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .universities-track {
+            display: flex;
+            gap: 30px;
+            animation: scrollUniversities 40s linear infinite;
+            width: max-content;
+        }
+        
+        .university-card {
+            flex: 0 0 280px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .university-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .university-image {
+            height: 180px;
+            overflow: hidden;
+            background: #f0f5ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .university-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .university-card:hover .university-image img {
+            transform: scale(1.05);
+        }
+        
+        .university-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .university-info h4 {
+            font-size: 18px;
+            color: #2f5aae;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        
+        .university-info p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .button-container {
+            margin-top: auto;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: #f59e0b;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .university-card:hover .read-more i {
+            transform: translateX(3px);
+        }
+
+        @keyframes scrollUniversities {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-310px * 11));
+            }
+        }
+
+        .universities-carousel:hover .universities-track {
+            animation-play-state: paused;
+        }
+
+        /* Responsive for Featured Universities */
+        @media (max-width: 992px) {
+            .universities-container {
+                flex-direction: column;
+            }
+            
+            .universities-info {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .navigation-buttons {
+                justify-content: center;
+            }
+
+            .universities-track {
+                animation: scrollUniversities 60s linear infinite;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-universities-section {
+                padding: 60px 0;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .university-card {
+                flex: 0 0 260px;
+                height: 360px;
+            }
+
+            .universities-track {
+                animation: scrollUniversities 50s linear infinite;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .featured-universities-section {
+                padding: 50px 0;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .university-card {
+                flex: 0 0 240px;
+                height: 340px;
+            }
+
+            .university-info {
+                padding: 15px;
+            }
+
+            .university-info h4 {
+                font-size: 16px;
+            }
+
+            .universities-track {
+                animation: scrollUniversities 40s linear infinite;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Featured Universities Section -->
+        <section class="featured-universities-section">
+            <div class="universities-content">
+                <div class="section-header">
+                    <h2>Our <span>Exclusive Partners</span> in the USA</h2>
+                    <p>Explore our Exclusive Partners in the USA! Avail benefits such as Scholarships, Application fee waiver, Quick Admission process and talk to University Representatives directly.</p>
+                </div>
+                
+                <div class="universities-container">
+                    <div class="universities-info">
+                        <h3>Featured <span>Universities</span></h3>
+                        <p>Our exclusive university partners offer special benefits to MS EDU GLOBAL students:</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> Special scholarships for MS EDU GLOBAL students</li>
+                            <li><i class="fas fa-check-circle"></i> Application fee waiver</li>
+                            <li><i class="fas fa-check-circle"></i> Quick admission process</li>
+                            <li><i class="fas fa-check-circle"></i> Direct access to university representatives</li>
+                        </ul>
+                        <div class="navigation-buttons">
+                            <button class="nav-btn prev-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-btn next-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="universities-carousel">
+                        <div class="universities-track">
+                            <!-- University 1 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AdelphiUniversity.jpg" alt="Adelphi University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Adelphi University</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 2 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AndersonUniversity.png" alt="Anderson University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Anderson University</h4>
+                                    <p>South Carolina, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 3 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/BaptistUniversityofFlorida.png" alt="Baptist University of Florida">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Baptist University of Florida</h4>
+                                    <p>Florida, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 4 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CampbellsvilleUniversity.png" alt="Campellsville University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Campellsville University</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 5 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CumberlandUniversity.png" alt="Cumberland University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Cumberland University</h4>
+                                    <p>Tennessee, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 6 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/FaulknerUniversity.png" alt="Faulkner University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Faulkner University</h4>
+                                    <p>Alabama, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 7 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/GoldenGateUniversity.png" alt="Golden Gate University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Golden Gate University</h4>
+                                    <p>California, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 8 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/St.FrancisCollege.png" alt="St. Francis College">
+                                </div>
+                                <div class="university-info">
+                                    <h4>St. Francis College</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 9 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/UniversityCumberlands,png.jpg" alt="University of the Cumberlands">
+                                </div>
+                                <div class="university-info">
+                                    <h4>University of the Cumberlands</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 10 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WaylandBaptistUniversity.png" alt="Wayland Baptist University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wayland Baptist University</h4>
+                                    <p>Texas, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 11 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WittenburgUniversity.png" alt="Wittenburg University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wittenburg University</h4>
+                                    <p>Ohio, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Duplicates for continuous scrolling -->
+                            <!-- University 1 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AdelphiUniversity.jpg" alt="Adelphi University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Adelphi University</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 2 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AndersonUniversity.png" alt="Anderson University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Anderson University</h4>
+                                    <p>South Carolina, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 3 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/BaptistUniversityofFlorida.png" alt="Baptist University of Florida">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Baptist University of Florida</h4>
+                                    <p>Florida, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 4 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CampbellsvilleUniversity.png" alt="Campellsville University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Campellsville University</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 5 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CumberlandUniversity.png" alt="Cumberland University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Cumberland University</h4>
+                                    <p>Tennessee, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 6 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/FaulknerUniversity.png" alt="Faulkner University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Faulkner University</h4>
+                                    <p>Alabama, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 7 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/GoldenGateUniversity.png" alt="Golden Gate University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Golden Gate University</h4>
+                                    <p>California, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 8 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/St.FrancisCollege.png" alt="St. Francis College">
+                                </div>
+                                <div class="university-info">
+                                    <h4>St. Francis College</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 9 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/UniversityCumberlands,png.jpg" alt="University of the Cumberlands">
+                                </div>
+                                <div class="university-info">
+                                    <h4>University of the Cumberlands</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 10 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WaylandBaptistUniversity.png" alt="Wayland Baptist University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wayland Baptist University</h4>
+                                    <p>Texas, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 11 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WittenburgUniversity.png" alt="Wittenburg University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wittenburg University</h4>
+                                    <p>Ohio, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Universities Carousel Controls
+            const track = document.querySelector('.universities-track');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const universityCards = document.querySelectorAll('.university-card');
+            const cardWidth = universityCards[0].offsetWidth + 30;
+            
+            let scrollPosition = 0;
+            const maxScroll = -(cardWidth * (universityCards.length / 2 - 11));
+            
+            // Manual controls
+            if (prevBtn && nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    scrollPosition -= cardWidth;
+                    if (scrollPosition < maxScroll) {
+                        scrollPosition = 0;
+                    }
+                    track.style.transform = `translateX(${scrollPosition}px)`;
+                });
+                
+                prevBtn.addEventListener('click', function() {
+                    scrollPosition += cardWidth;
+                    if (scrollPosition > 0) {
+                        scrollPosition = maxScroll + cardWidth;
+                    }
+                    track.style.transform = `translateX(${scrollPosition}px)`;
+                });
+            }
+            
+            // Pause animation on hover
+            const carousel = document.querySelector('.universities-carousel');
+            carousel.addEventListener('mouseenter', function() {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                track.style.animationPlayState = 'running';
+            });
+
+            // Image error handling
+            const universityImages = document.querySelectorAll('.university-image img');
+            
+            universityImages.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    const container = this.parentElement;
+                    container.innerHTML = '<i class="fas fa-university fallback-icon" style="font-size: 3rem; color: #2f5aae;"></i>';
+                });
+            });
+            
+            console.log('Featured Universities section loaded successfully!');
+        });
+    </script>
+</body>
+</html>

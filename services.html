@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - MS EDU GLOBAL | Study Abroad Consultants</title>
+    <meta name="description" content="Comprehensive study abroad services including student guidance, test preparation, financial assistance, and career support.">
+    
+    <style>
+        /* === MS EDU GLOBAL - Enhanced Styles === */
+        :root {
+            --primary: #2f5aae;
+            --primary-dark: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #dc2626;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === Top Bar === */
+        .top-bar { background: var(--primary-dark); color: var(--white); padding: 8px 0; font-size: 14px; }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+        .contact-info span { margin-right: 20px; display: inline-flex; align-items: center; gap: 5px; }
+        .social-links-top a { color: var(--white); margin-left: 15px; text-decoration: none; transition: var(--transition); }
+        .social-links-top a:hover { color: var(--secondary); }
+
+        /* === Header === */
+        .header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 28px; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--secondary); }
+        .main-nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
+        .main-nav a { text-decoration: none; color: var(--text); font-weight: 500; transition: var(--transition); padding: 10px 0; position: relative; }
+        .main-nav a:hover, .main-nav a.active { color: var(--primary); }
+        .main-nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--primary); }
+
+        /* === Dropdown Menus === */
+        .dropdown { position: relative; }
+        
+        .services-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .universities-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .dropdown:hover .services-dropdown-content,
+        .dropdown:hover .universities-dropdown-content {
+            display: block;
+        }
+        
+        .submenu-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .submenu-item:hover, .submenu-item.active {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        .country-flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* === Announcement Bar === */
+        .announcement-bar { 
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); 
+            color: var(--white); 
+            padding: 12px 0; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .scrolling-text { 
+            display: flex; 
+            animation: scrollText 25s linear infinite; 
+            white-space: nowrap; 
+        }
+        .scrolling-text span { 
+            padding: 0 40px; 
+            font-weight: 500; 
+            font-size: 15px; 
+        }
+        @keyframes scrollText { 
+            0% { transform: translateX(100%); } 
+            100% { transform: translateX(-100%); } 
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #e69008;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* === Services Page Specific Styles === */
+        .services-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .services-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .services-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Services Overview Section */
+        .services-overview {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header-center h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-header-center p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card-large {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card-large:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            width: 23%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-content h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .connector-line {
+            position: absolute;
+            top: 35px;
+            left: 12%;
+            width: 76%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer { background: linear-gradient(135deg, var(--primary-dark), var(--text)); color: var(--white); padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { color: var(--secondary); margin-bottom: 20px; font-size: 20px; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin: 10px 0; }
+        .footer-column a { color: #d1d5db; text-decoration: none; transition: var(--transition); }
+        .footer-column a:hover { color: var(--secondary); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: #9ca3af; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .process-steps {
+                flex-wrap: wrap;
+            }
+            
+            .process-step {
+                width: 48%;
+                margin-bottom: 40px;
+            }
+            
+            .connector-line {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
+            .contact-info span { margin: 5px; display: block; }
+            .services-hero h1 { font-size: 2.5rem; }
+            .main-nav ul { gap: 15px; }
+            .section-header-center h2 { font-size: 2.2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .process-step { width: 100%; }
+        }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</span>
+                </div>
+                <div class="social-links-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    MS EDU GLOBAL
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+                        <!-- Services Dropdown -->
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle active">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="services-dropdown-content">
+                                <a href="studentguidance.html" class="submenu-item">Student Guidance</a>
+                                <a href="testprep-readiness.html" class="submenu-item">Test Prep & Readiness</a>
+                                <a href="finance-scholarships.html" class="submenu-item">Finance & Scholarships</a>
+                                <a href="studentessentials.html" class="submenu-item">Student Essentials</a>
+                                <a href="careerservices.html" class="submenu-item">Career Services</a>
+                            </div>
+                        </li>
+
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+
+                        <!-- Universities Dropdown -->
+                        <li class="dropdown">
+                            <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+                            <div class="universities-dropdown-content">
+                                <div class="submenu-item"><span class="country-flag">🇺🇸</span> USA</div>
+                                <div class="submenu-item"><span class="country-flag">🇬🇧</span> UK</div>
+                                <div class="submenu-item"><span class="country-flag">🇨🇦</span> Canada</div>
+                            </div>
+                        </li>
+
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+        </div>
+    </div>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <h1>Our Comprehensive Services</h1>
+                <p>End-to-end support for your international education journey with expert guidance at every step</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Your Complete Study Abroad Solution</h2>
+                <p>From initial counseling to career placement, we provide comprehensive support for your international education journey</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Student Guidance -->
+                <div class="service-card-large">
+                    <div class="service-image" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Student Guidance</h3>
+                        <p>Complete counseling and profile evaluation for your study abroad journey with personalized support and university selection.</p>
+                        <ul class="service-features">
+                            <li>Profile Evaluation & Career Counseling</li>
+                            <li>University & Course Selection</li>
+                            <li>Admission Application Support</li>
+                            <li>Document Preparation Assistance</li>
+                        </ul>
+                        <a href="studentguidance.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Test Prep & Readiness -->
+                <div class="service-card-large">
+                    <div class="service-image" style="background: linear-gradient(135deg, #065f46, #10b981); display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Test Prep & Readiness</h3>
+                        <p>IELTS, TOEFL, GRE, GMAT coaching with expert instructors, mock tests, and comprehensive test strategies.</p>
+                        <ul class="service-features">
+                            <li>GRE/GMAT Preparation</li>
+                            <li>IELTS/TOEFL/PTE Coaching</li>
+                            <li>Mock Interviews & SOP Reviews</li>
+                            <li>Pre-Departure Orientation</li>
+                        </ul>
+                        <a href="testprep-readiness.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Finance & Scholarships -->
+                <div class="service-card-large">
+                    <div class="service-image" style="background: linear-gradient(135deg, #92400e, #f59e0b); display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Finance & Scholarships</h3>
+                        <p>Scholarship and education loan assistance to fund your education with financial planning and application support.</p>
+                        <ul class="service-features">
+                            <li>Education Loan Guidance</li>
+                            <li>Scholarship Assistance</li>
+                            <li>Student ISA Support</li>
+                            <li>Budget Planning & Forex Help</li>
+                        </ul>
+                        <a href="finance-scholarships.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Student Essentials -->
+                <div class="service-card-large">
+                    <div class="service-image" style="background: linear-gradient(135deg, #5b21b6, #8b5cf6); display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Student Essentials</h3>
+                        <p>Complete visa application support, accommodation assistance, health insurance, and pre-departure orientation.</p>
+                        <ul class="service-features">
+                            <li>Visa Application & Documentation</li>
+                            <li>Accommodation Assistance</li>
+                            <li>Health Insurance Guidance</li>
+                            <li>Travel Assistance & SIM Cards</li>
+                        </ul>
+                        <a href="studentessentials.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <!-- Career Services -->
+                <div class="service-card-large">
+                    <div class="service-image" style="background: linear-gradient(135deg, #991b1b, #ef4444); display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Career Services</h3>
+                        <p>Internship and job search guidance, resume building, LinkedIn optimization, and career counseling for your future.</p>
+                        <ul class="service-features">
+                            <li>Internship & Job Search Guidance</li>
+                            <li>Resume / LinkedIn Profile Building</li>
+                            <li>Career Counselling Sessions</li>
+                            <li>Networking & Alumni Connect</li>
+                        </ul>
+                        <a href="careerservices.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Our Service Process</h2>
+                <p>How we work with you to achieve your study abroad dreams</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="connector-line"></div>
+                
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Initial Consultation</h4>
+                        <p>We understand your goals, preferences, and background to create a personalized plan.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Profile Assessment</h4>
+                        <p>Comprehensive evaluation of your academic profile, test scores, and career aspirations.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>University Selection</h4>
+                        <p>Strategic shortlisting of universities that match your profile and career goals.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Application & Support</h4>
+                        <p>Complete assistance with applications, documentation, and follow-up until admission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Our expert consultants are here to guide you through every step of your study abroad process</p>
+                <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>MS EDU GLOBAL</h3>
+                    <p>Your trusted partner for global education opportunities since 2010.</p>
+                    <div class="social-links-top">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="universities.html">Study in USA</a></li>
+                        <li><a href="universities.html">Study in UK</a></li>
+                        <li><a href="universities.html">Study in Canada</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MS EDU GLOBAL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dropdown functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.classList.add('active');
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                });
+            });
+            
+            // Animation for process steps
+            const steps = document.querySelectorAll('.process-step');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            steps.forEach(step => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(20px)';
+                step.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(step);
+            });
+            
+            console.log('MS EDU GLOBAL Services page loaded successfully!');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

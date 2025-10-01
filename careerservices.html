@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Services - MS EDU GLOBAL | Study Abroad Consultants</title>
+    <meta name="description" content="Professional career development services including job search guidance, resume building, career counseling, and networking opportunities for international students.">
+    
+    <style>
+        /* === MS EDU GLOBAL - Enhanced Styles === */
+        :root {
+            --primary: #2f5aae;
+            --primary-dark: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #dc2626;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === Top Bar === */
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links-top a {
+            color: var(--white);
+            margin-left: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links-top a:hover {
+            color: var(--secondary);
+        }
+
+        /* === Header === */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* === Dropdown Menus === */
+        .dropdown { position: relative; }
+        
+        .services-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .universities-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .dropdown:hover .services-dropdown-content,
+        .dropdown:hover .universities-dropdown-content {
+            display: block;
+        }
+        
+        .submenu-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .submenu-item:hover, .submenu-item.active {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        .country-flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* === Announcement Bar === */
+        .announcement-bar { 
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); 
+            color: var(--white); 
+            padding: 12px 0; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .scrolling-text { 
+            display: flex; 
+            animation: scrollText 25s linear infinite; 
+            white-space: nowrap; 
+        }
+        .scrolling-text span { 
+            padding: 0 40px; 
+            font-weight: 500; 
+            font-size: 15px; 
+        }
+        @keyframes scrollText { 
+            0% { transform: translateX(100%); } 
+            100% { transform: translateX(-100%); } 
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #e69008;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* === Career Services Page Specific Styles === */
+        .service-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .service-content {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Fixed Sidebar Navigation */
+        .service-sidebar-nav {
+            position: sticky;
+            top: 160px;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .service-sidebar-nav h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            font-size: 1.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-link {
+            padding: 15px 20px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .nav-link i {
+            font-size: 18px;
+            width: 20px;
+        }
+
+        /* Service Sections */
+        .service-section {
+            display: none;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .service-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-icon i {
+            font-size: 30px;
+            color: var(--white);
+        }
+
+        .section-title {
+            flex: 1;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        .feature-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .process-steps {
+            margin: 30px 0;
+        }
+
+        .process-step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 35px;
+            height: 35px;
+            background: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .benefit-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .service-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .service-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Consultation Section */
+        .consultation-section {
+            background: var(--bg-light);
+            padding: 60px 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header-center h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .section-header-center p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* === Footer === */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--text));
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin: 10px 0;
+        }
+
+        .footer-column a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* === Responsive Design === */
+        @media (max-width: 1024px) {
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .service-sidebar-nav {
+                position: static;
+                order: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
+            .contact-info span { margin: 5px; display: block; }
+            .service-hero h1 { font-size: 2.2rem; }
+            .main-nav ul { gap: 15px; }
+            .section-header { flex-direction: column; text-align: center; }
+            .section-icon { margin: 0 auto 20px; }
+            .service-actions { flex-direction: column; }
+            .nav-links { flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
+            .nav-link { white-space: nowrap; min-width: 200px; }
+        }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</span>
+                </div>
+                <div class="social-links-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    MS EDU GLOBAL
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+                        <!-- Services Dropdown -->
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="services-dropdown-content">
+                                <a href="studentguidance.html" class="submenu-item">Student Guidance</a>
+                                <a href="testprep-readiness.html" class="submenu-item">Test Prep & Readiness</a>
+                                <a href="finance-scholarships.html" class="submenu-item">Finance & Scholarships</a>
+                                <a href="studentessentials.html" class="submenu-item">Student Essentials</a>
+                                <a href="careerservices.html" class="submenu-item active">Career Services</a>
+                            </div>
+                        </li>
+
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+
+                        <!-- Universities Dropdown -->
+                        <li class="dropdown">
+                            <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+                            <div class="universities-dropdown-content">
+                                <div class="submenu-item"><span class="country-flag">🇺🇸</span> USA</div>
+                                <div class="submenu-item"><span class="country-flag">🇬🇧</span> UK</div>
+                                <div class="submenu-item"><span class="country-flag">🇨🇦</span> Canada</div>
+                            </div>
+                        </li>
+
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+        </div>
+    </div>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>Career Services</h1>
+            <p>Professional career development support to help you succeed in the international job market</p>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content container">
+        <!-- Fixed Sidebar Navigation -->
+        <div class="service-sidebar-nav">
+            <h3>Our Services</h3>
+            <div class="nav-links">
+                <a href="#internship-job" class="nav-link active" data-section="internship-job">
+                    <i class="fas fa-briefcase"></i>
+                    Internship & Job Search
+                </a>
+                <a href="#resume-linkedin" class="nav-link" data-section="resume-linkedin">
+                    <i class="fas fa-file-alt"></i>
+                    Resume & LinkedIn Building
+                </a>
+                <a href="#career-counselling" class="nav-link" data-section="career-counselling">
+                    <i class="fas fa-user-graduate"></i>
+                    Career Counselling
+                </a>
+                <a href="#networking" class="nav-link" data-section="networking">
+                    <i class="fas fa-network-wired"></i>
+                    Networking & Alumni Connect
+                </a>
+            </div>
+        </div>
+
+        <!-- Service Sections Container -->
+        <div class="service-sections">
+            <!-- Internship & Job Search Section -->
+            <div id="internship-job" class="service-section active">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Internship & Job Search Guidance</h2>
+                        <p>Strategic support to help you secure internships and employment opportunities abroad</p>
+                    </div>
+                </div>
+
+                <p>Breaking into the job market abroad can be tough — we provide strategies, curated employer lists, and personalized coaching to help you land internships and jobs faster.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Targeted Job Search</h3>
+                        <p>Customized job search strategies based on your skills, qualifications, and career goals in your host country.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Employer Connections</h3>
+                        <p>Access to our network of employers who are open to hiring international students and graduates.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Interview Preparation</h3>
+                        <p>Comprehensive coaching for job interviews including cultural nuances and industry-specific expectations.</p>
+                    </div>
+                </div>
+                
+                <h3>Job Search Process</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Career Assessment</h4>
+                            <p>Evaluation of your skills, interests, and career objectives to identify suitable opportunities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Market Research</h4>
+                            <p>Analysis of job markets, industries, and companies that align with your profile and goals.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Application Strategy</h3>
+                            <p>Development of a targeted approach for applications, networking, and follow-ups.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Offer Negotiation</h4>
+                            <p>Guidance on evaluating job offers and negotiating terms that work for you.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Start Job Search</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- Resume & LinkedIn Building Section -->
+            <div id="resume-linkedin" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Resume / LinkedIn Profile Building</h2>
+                        <p>Professional optimization of your career documents for maximum impact</p>
+                    </div>
+                </div>
+
+                <p>A strong first impression matters. Our experts optimize your resume for Applicant Tracking Systems (ATS) and revamp your LinkedIn profile to attract recruiters worldwide.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>ATS Optimization</h3>
+                        <p>Strategic formatting and keyword optimization to ensure your resume passes through automated screening systems.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>LinkedIn Profile Makeover</h3>
+                        <p>Complete optimization of your LinkedIn profile including headline, summary, and experience sections.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Brand Development</h3>
+                        <p>Creation of a consistent professional brand across all your career documents and online presence.</p>
+                    </div>
+                </div>
+                
+                <h3>Our Resume Services</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>Professional Formatting</h4>
+                        <p>Clean, modern designs that highlight your achievements while maintaining professionalism.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Achievement Focus</h4>
+                        <p>Transformation of job duties into quantifiable achievements that impress employers.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Industry Customization</h4>
+                        <p>Tailored content and formatting specific to your target industry and role.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Multiple Versions</h4>
+                        <p>Creation of different resume versions for various job applications and industries.</p>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Optimize Your Profile</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- Career Counselling Section -->
+            <div id="career-counselling" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Career Counselling Sessions</h2>
+                        <p>Personalized guidance to help you navigate your career path with confidence</p>
+                    </div>
+                </div>
+
+                <p>We offer personalized counselling to help you explore career paths, identify skills to develop, and plan for long-term success. You'll walk away with a clear growth strategy.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Career Path Planning</h3>
+                        <p>Structured approach to identifying and planning your ideal career trajectory based on your strengths and market opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Skill Gap Analysis</h3>
+                        <p>Identification of skills you need to develop to achieve your career objectives.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Goal Setting</h3>
+                        <p>Establishment of clear, achievable short-term and long-term career goals with actionable steps.</p>
+                    </div>
+                </div>
+                
+                <h3>Counselling Process</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Initial Assessment</h4>
+                            <p>Comprehensive evaluation of your skills, interests, values, and career aspirations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Market Analysis</h4>
+                            <p>Research on industry trends, job markets, and opportunities aligned with your profile.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Strategy Development</h4>
+                            <p>Creation of a personalized career development plan with specific milestones.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Implementation Support</h4>
+                            <p>Ongoing guidance and adjustments to your plan as you progress in your career journey.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Schedule Counselling</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- Networking & Alumni Connect Section -->
+            <div id="networking" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Networking & Alumni Connect</h2>
+                        <p>Build valuable professional connections to accelerate your career growth</p>
+                    </div>
+                </div>
+
+                <p>Building the right network is key to success abroad. We connect you with alumni and industry professionals through events and mentorship programs to give you an edge in your career.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Alumni Network Access</h3>
+                        <p>Connection with successful alumni who can provide guidance, referrals, and industry insights.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Professional Events</h3>
+                        <p>Invitations to networking events, industry conferences, and career fairs relevant to your field.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Mentorship Programs</h3>
+                        <p>Matching with experienced professionals who can provide ongoing guidance and support.</p>
+                    </div>
+                </div>
+                
+                <h3>Networking Benefits</h3>
+                <ul class="service-list">
+                    <li>Access to hidden job opportunities not advertised publicly</li>
+                    <li>Industry insights and trends from experienced professionals</li>
+                    <li>Referrals that significantly increase your chances of landing interviews</li>
+                    <li>Mentorship for long-term career guidance and growth</li>
+                    <li>Professional development through knowledge sharing</li>
+                    <li>Cross-cultural networking skills for international careers</li>
+                    <li>Building relationships that can last throughout your career</li>
+                    <li>Enhanced visibility and personal brand in your industry</li>
+                </ul>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Join Our Network</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="consultation-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Ready to Advance Your Career?</h2>
+                <p>Our career experts are here to help you achieve your professional goals abroad</p>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>MS EDU GLOBAL</h3>
+                    <p>Your trusted partner for global education opportunities since 2010.</p>
+                    <div class="social-links-top">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="#">Study in USA</a></li>
+                        <li><a href="#">Study in UK</a></li>
+                        <li><a href="#">Study in Canada</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MS EDU GLOBAL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Service Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.service-section');
+            
+            // Set default active section
+            function setActiveSection(sectionId) {
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show selected section
+                const activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                }
+                
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Click handler for nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    setActiveSection(sectionId);
+                    
+                    // Scroll to top of sections container
+                    document.querySelector('.service-sections').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Set Internship & Job Search as default
+            setActiveSection('internship-job');
+            
+            // Dropdown functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.classList.add('active');
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

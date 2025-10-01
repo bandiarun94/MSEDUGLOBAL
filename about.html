@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MS EDU GLOBAL | Study Abroad Consultants</title>
+    <meta name="description" content="Learn about MS EDU GLOBAL's mission, values, and team dedicated to helping students achieve their international education dreams.">
+    
+    <style>
+        /* === MS EDU GLOBAL - Enhanced Styles === */
+        :root {
+            --primary: #2f5aae;
+            --primary-dark: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #dc2626;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === Top Bar === */
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links-top a {
+            color: var(--white);
+            margin-left: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links-top a:hover {
+            color: var(--secondary);
+        }
+
+        /* === Header === */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* === Dropdown Menus === */
+        .dropdown { position: relative; }
+        
+        .services-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .universities-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .dropdown:hover .services-dropdown-content,
+        .dropdown:hover .universities-dropdown-content {
+            display: block;
+        }
+        
+        .submenu-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .submenu-item:hover, .submenu-item.active {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        .country-flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* === Announcement Bar === */
+        .announcement-bar { 
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); 
+            color: var(--white); 
+            padding: 12px 0; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .scrolling-text { 
+            display: flex; 
+            animation: scrollText 25s linear infinite; 
+            white-space: nowrap; 
+        }
+        .scrolling-text span { 
+            padding: 0 40px; 
+            font-weight: 500; 
+            font-size: 15px; 
+        }
+        @keyframes scrollText { 
+            0% { transform: translateX(100%); } 
+            100% { transform: translateX(-100%); } 
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #e69008;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* === About Us Page Specific Styles === */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header-center h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-header-center p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .mission-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .mission-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .mission-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .mission-graphic {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 100px 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .value-icon i {
+            font-size: 35px;
+            color: var(--white);
+        }
+
+        .value-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-photo {
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-info h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+        }
+
+        .member-info .position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 100px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid var(--white);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid var(--white);
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: -20px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -70px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -70px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        /* === Footer === */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--text));
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin: 10px 0;
+        }
+
+        .footer-column a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* === Responsive Design === */
+        @media (max-width: 1024px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 0;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                right: auto;
+                border-right: 10px solid var(--white);
+                border-left: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
+            .contact-info span { margin: 5px; display: block; }
+            .about-hero h1 { font-size: 2.5rem; }
+            .main-nav ul { gap: 15px; }
+            .section-header-center h2 { font-size: 2.2rem; }
+            .values-grid, .team-grid, .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</span>
+                </div>
+                <div class="social-links-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    MS EDU GLOBAL
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+                        <!-- Services Dropdown -->
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="services-dropdown-content">
+                                <a href="studentguidance.html" class="submenu-item">Student Guidance</a>
+                                <a href="testprep-readiness.html" class="submenu-item">Test Prep & Readiness</a>
+                                <a href="finance-scholarships.html" class="submenu-item">Finance & Scholarships</a>
+                                <a href="studentessentials.html" class="submenu-item">Student Essentials</a>
+                                <a href="careerservices.html" class="submenu-item">Career Services</a>
+                            </div>
+                        </li>
+
+                        <li><a href="about.html" class="active">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+
+                  <!-- Universities Dropdown -->
+                        <li class="dropdown">
+                            <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+                            <div class="universities-dropdown-content">
+                                <!-- USA -->
+                                <div class="country">
+                                    <span class="country-flag">🇺🇸</span> USA
+                                </div>
+                                
+                                <!-- UK -->
+                                <div class="country">
+                                    <span class="country-flag">🇬🇧</span> UK
+                                </div>
+                                
+                                <!-- Canada -->
+                                <div class="country">
+                                    <span class="country-flag">🇨🇦</span> Canada
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+        </div>
+    </div>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1>About MS EDU GLOBAL</h1>
+                <p>Transforming dreams into global educational realities since 2010</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Our Mission & Vision</h2>
+                <p>We are committed to making world-class education accessible to students across the globe</p>
+            </div>
+            
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h3>Empowering Global Education</h3>
+                    <p>Founded in 2010, MS EDU GLOBAL emerged from a simple yet powerful vision: to break down barriers in international education. Our founders, having experienced the challenges of studying abroad firsthand, recognized the need for comprehensive guidance that goes beyond mere university placements.</p>
+                    
+                    <p>We believe that every student deserves access to quality education regardless of their background or geographical location. Our mission is to provide end-to-end support that transforms the complex process of studying abroad into a seamless, enriching journey.</p>
+                    
+                    <p>Today, we stand as a trusted partner for thousands of students, with a success rate that speaks to our dedication and expertise in the field of international education consulting.</p>
+                    
+                    <a href="contact.html" class="btn btn-primary">Get to Know Us</a>
+                </div>
+                
+                <div class="mission-graphic">
+                    <div>
+                        <i class="fas fa-globe-americas" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                        <p>14 Years of Excellence in Global Education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide our approach to student success</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Student-Centric Approach</h3>
+                    <p>Every decision we make prioritizes the best interests of our students. We tailor our services to individual needs, aspirations, and circumstances.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity & Transparency</h3>
+                    <p>We maintain complete honesty in our processes, providing clear information about costs, requirements, and realistic expectations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation & Excellence</h3>
+                    <p>We continuously evolve our services to incorporate the latest trends in education and technology, ensuring we deliver exceptional results.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Compassionate Support</h3>
+                    <p>We understand the emotional journey of studying abroad and provide empathetic guidance at every step of the process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Meet Our Leadership Team</h2>
+                <p>Experienced professionals dedicated to your educational success</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Stevens</h3>
+                        <p class="position">Founder & CEO</p>
+                        <p>With over 15 years in international education, Michael founded MS EDU GLOBAL to make study abroad opportunities accessible to all.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="position">Director of Admissions</p>
+                        <p>Sarah specializes in university partnerships and admission strategies, having helped thousands of students secure placements at top institutions.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>David Chen</h3>
+                        <p class="position">Head of Career Services</p>
+                        <p>David leverages his corporate HR background to help students transition successfully from education to employment abroad.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Maria Rodriguez</h3>
+                        <p class="position">Visa & Documentation Expert</p>
+                        <p>Maria's expertise in immigration policies ensures our students navigate visa processes with confidence and success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>5,000+</h3>
+                    <p>Students Guided</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Visa Success Rate</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Countries We Work With</p>
+                </div>
+                
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>University Partnerships</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Our Journey</h2>
+                <p>Milestones in our commitment to global education</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>Foundation</h3>
+                        <p>MS EDU GLOBAL was established with a vision to democratize access to international education.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2013</div>
+                    <div class="timeline-content">
+                        <h3>First 1000 Students</h3>
+                        <p>We celebrated guiding our first 1000 students to universities across North America and Europe.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>Global Expansion</h3>
+                        <p>Expanded our services to include Australia and New Zealand, growing our university partnerships.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <h3>Comprehensive Services</h3>
+                        <p>Launched our full suite of services including test preparation, accommodation, and career support.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Implemented advanced digital platforms to enhance student experience and service delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>Excellence Recognized</h3>
+                        <p>Awarded "Best Education Consultancy" for outstanding student support and success rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Begin Your Educational Journey?</h2>
+                <p>Join thousands of successful students who have achieved their dreams with MS EDU GLOBAL. Our team is here to guide you every step of the way.</p>
+                <a href="contact.html" class="btn btn-primary">Start Your Journey Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>MS EDU GLOBAL</h3>
+                    <p>Your trusted partner for global education opportunities since 2010.</p>
+                    <div class="social-links-top">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="#">Study in USA</a></li>
+                        <li><a href="#">Study in UK</a></li>
+                        <li><a href="#">Study in Canada</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MS EDU GLOBAL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for stats counter
+        document.addEventListener('DOMContentLoaded', function() {
+            const statsSection = document.querySelector('.stats-section');
+            const statItems = document.querySelectorAll('.stat-item h3');
+            
+            const animateValue = (obj, start, end, duration) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start);
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        statItems.forEach(item => {
+                            const value = parseInt(item.textContent);
+                            animateValue(item, 0, value, 2000);
+                        });
+                        observer.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(statsSection);
+            
+            // Dropdown functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.classList.add('active');
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

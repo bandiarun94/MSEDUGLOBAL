@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Guidance - MS EDU GLOBAL | Study Abroad Consultants</title>
+    <meta name="description" content="Comprehensive student guidance services including profile evaluation, admission guidance, study abroad counselling, university shortlisting, and transfer assistance.">
+    
+    <style>
+        /* === MS EDU GLOBAL - Enhanced Styles === */
+        :root {
+            --primary: #2f5aae;
+            --primary-dark: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #dc2626;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === Top Bar === */
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links-top a {
+            color: var(--white);
+            margin-left: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links-top a:hover {
+            color: var(--secondary);
+        }
+
+        /* === Header === */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* === Dropdown Menus === */
+        .dropdown { position: relative; }
+        
+        .services-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .universities-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        .dropdown:hover .services-dropdown-content,
+        .dropdown:hover .universities-dropdown-content {
+            display: block;
+        }
+        
+        .submenu-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            color: #333;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .submenu-item:hover, .submenu-item.active {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        .country-flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* === Announcement Bar === */
+        .announcement-bar { 
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); 
+            color: var(--white); 
+            padding: 12px 0; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .scrolling-text { 
+            display: flex; 
+            animation: scrollText 25s linear infinite; 
+            white-space: nowrap; 
+        }
+        .scrolling-text span { 
+            padding: 0 40px; 
+            font-weight: 500; 
+            font-size: 15px; 
+        }
+        @keyframes scrollText { 
+            0% { transform: translateX(100%); } 
+            100% { transform: translateX(-100%); } 
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #e69008;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* === Student Guidance Page Specific Styles === */
+        .service-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .service-content {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Fixed Sidebar Navigation */
+        .service-sidebar-nav {
+            position: sticky;
+            top: 160px;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .service-sidebar-nav h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            font-size: 1.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-link {
+            padding: 15px 20px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .nav-link i {
+            font-size: 18px;
+            width: 20px;
+        }
+
+        /* Service Sections */
+        .service-section {
+            display: none;
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .service-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-icon i {
+            font-size: 30px;
+            color: var(--white);
+        }
+
+        .section-title {
+            flex: 1;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        .feature-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .process-steps {
+            margin: 30px 0;
+        }
+
+        .process-step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 35px;
+            height: 35px;
+            background: var(--secondary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .benefit-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .service-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .service-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Consultation Section */
+        .consultation-section {
+            background: var(--bg-light);
+            padding: 60px 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .section-header-center {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header-center h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .section-header-center p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* === Footer === */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--text));
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin: 10px 0;
+        }
+
+        .footer-column a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* === Responsive Design === */
+        @media (max-width: 1024px) {
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .service-sidebar-nav {
+                position: static;
+                order: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
+            .contact-info span { margin: 5px; display: block; }
+            .service-hero h1 { font-size: 2.2rem; }
+            .main-nav ul { gap: 15px; }
+            .section-header { flex-direction: column; text-align: center; }
+            .section-icon { margin: 0 auto 20px; }
+            .service-actions { flex-direction: column; }
+            .nav-links { flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
+            .nav-link { white-space: nowrap; min-width: 200px; }
+        }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</span>
+                </div>
+                <div class="social-links-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    MS EDU GLOBAL
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+                        <!-- Services Dropdown -->
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="services-dropdown-content">
+                                <a href="studentguidance.html" class="submenu-item active">Student Guidance</a>
+                                <a href="testprep-readiness.html" class="submenu-item">Test Prep & Readiness</a>
+                                <a href="finance-scholarships.html" class="submenu-item">Finance & Scholarships</a>
+                                <a href="studentessentials.html" class="submenu-item">Student Essentials</a>
+                                <a href="careerservices.html" class="submenu-item">Career Services</a>
+                            </div>
+                        </li>
+
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+
+                        <!-- Universities Dropdown -->
+                        <li class="dropdown">
+                            <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+                            <div class="universities-dropdown-content">
+                                <div class="submenu-item"><span class="country-flag">🇺🇸</span> USA</div>
+                                <div class="submenu-item"><span class="country-flag">🇬🇧</span> UK</div>
+                                <div class="submenu-item"><span class="country-flag">🇨🇦</span> Canada</div>
+                            </div>
+                        </li>
+
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+        </div>
+    </div>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>Student Guidance Services</h1>
+            <p>Comprehensive support from initial assessment to university selection and transfer guidance</p>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content container">
+        <!-- Fixed Sidebar Navigation -->
+        <div class="service-sidebar-nav">
+            <h3>Our Services</h3>
+            <div class="nav-links">
+                <a href="#profile-evaluation" class="nav-link active" data-section="profile-evaluation">
+                    <i class="fas fa-chart-line"></i>
+                    Profile Evaluation
+                </a>
+                <a href="#admission-guidance" class="nav-link" data-section="admission-guidance">
+                    <i class="fas fa-tasks"></i>
+                    Admission Guidance
+                </a>
+                <a href="#study-abroad-counselling" class="nav-link" data-section="study-abroad-counselling">
+                    <i class="fas fa-globe-americas"></i>
+                    Study Abroad Counselling
+                </a>
+                <a href="#country-course-shortlisting" class="nav-link" data-section="country-course-shortlisting">
+                    <i class="fas fa-list-alt"></i>
+                    Country & Course Shortlisting
+                </a>
+                <a href="#university-shortlisting" class="nav-link" data-section="university-shortlisting">
+                    <i class="fas fa-university"></i>
+                    University Shortlisting
+                </a>
+                <a href="#university-transfer" class="nav-link" data-section="university-transfer">
+                    <i class="fas fa-exchange-alt"></i>
+                    University Transfer
+                </a>
+            </div>
+        </div>
+
+        <!-- Service Sections Container -->
+        <div class="service-sections">
+            <!-- Profile Evaluation Section -->
+            <div id="profile-evaluation" class="service-section active">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Profile Evaluation</h2>
+                        <p>Comprehensive assessment of your academic background and strengths</p>
+                    </div>
+                </div>
+
+                <p>Our experts carefully review your academic background, extracurricular achievements, and future career goals to create a clear picture of your strengths. This evaluation helps identify areas for improvement and guides you toward the right opportunities.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Academic Background Analysis</h3>
+                        <p>We evaluate your transcripts, grades, and educational history to understand your academic capabilities and identify suitable programs. Our team analyzes your GPA, course rigor, and academic trends to provide insights into your competitive standing.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Extracurricular Assessment</h3>
+                        <p>Your activities, leadership roles, and achievements are analyzed to strengthen your overall profile. We help you showcase your unique experiences and how they contribute to your personal and professional development.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Career Goal Alignment</h3>
+                        <p>We ensure your educational choices align with your long-term career aspirations. Our experts help you connect your academic interests with future career paths and identify programs that will best support your goals.</p>
+                    </div>
+                </div>
+                
+                <h3>Evaluation Process</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Document Collection</h4>
+                            <p>We gather all your academic records, test scores, and supporting documents for comprehensive analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Comprehensive Analysis</h4>
+                            <p>Our experts analyze every aspect of your profile in detail, identifying strengths and areas for improvement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Strength Identification</h4>
+                            <p>We identify your unique strengths and how to effectively highlight them in your applications.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Personalized Recommendations</h4>
+                            <p>You receive tailored advice on program selection, application strategy, and profile enhancement.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Get Your Profile Evaluated</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- Admission Guidance Section -->
+            <div id="admission-guidance" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Admission Guidance</h2>
+                        <p>Complete support for your university application process</p>
+                    </div>
+                </div>
+
+                <p>Applying abroad can be complex — we simplify the process by helping with timelines, document preparation, recommendation letters, and application submissions. You'll have a clear roadmap from start to finish.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Timeline Management</h3>
+                        <p>We create personalized application timelines to ensure you meet all deadlines for your target universities and programs. Our systematic approach keeps you on track throughout the entire application cycle.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Document Preparation</h3>
+                        <p>Guidance on preparing all required documents accurately and completely. We help you organize transcripts, test scores, financial documents, and other essential paperwork.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Application Submission</h3>
+                        <p>We assist with the entire application submission process, ensuring all components are completed correctly and submitted before deadlines.</p>
+                    </div>
+                </div>
+                
+                <h3>Key Benefits</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>Reduced Stress</h4>
+                        <p>Professional guidance eliminates application anxiety and uncertainty throughout the process.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Higher Success Rate</h4>
+                        <p>Expert support increases your chances of acceptance through strategic application planning.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Time Efficiency</h4>
+                        <p>We streamline the process to save you valuable time and prevent last-minute rushing.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Error Reduction</h4>
+                        <p>Professional review minimizes application mistakes that could lead to rejection.</p>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Start Your Application</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- Study Abroad Counselling Section -->
+            <div id="study-abroad-counselling" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Study Abroad Counselling</h2>
+                        <p>Personalized guidance for choosing the right study destination</p>
+                    </div>
+                </div>
+
+                <p>Deciding where to study is a life-changing choice. We provide one-on-one counselling to discuss country fit, living costs, post-study work options, and how each choice aligns with your career goals.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Country Selection Guidance</h3>
+                        <p>We help you evaluate different countries based on education quality, living costs, cultural factors, and career opportunities to find your perfect match.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Cost of Living Analysis</h3>
+                        <p>Comprehensive breakdown of expenses including tuition, accommodation, food, transportation, and miscellaneous costs for different destinations.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Post-Study Work Opportunities</h3>
+                        <p>Detailed information about work permit policies, job markets, and career prospects in your chosen study destinations.</p>
+                    </div>
+                </div>
+                
+                <h3>Our Counselling Approach</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Initial Assessment</h4>
+                            <p>Understanding your preferences, priorities, and constraints through detailed discussion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Country Comparison</h4>
+                            <p>Presenting detailed comparisons of potential study destinations based on your profile.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Personalized Recommendations</h4>
+                            <p>Providing tailored advice on the best countries and cities for your specific situation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Implementation Plan</h4>
+                            <p>Creating a step-by-step action plan for your chosen study destination.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Book Counselling Session</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- Country & Course Shortlisting Section -->
+            <div id="country-course-shortlisting" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-list-alt"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>Country & Course Shortlisting</h2>
+                        <p>Personalized selection of destinations and academic programs</p>
+                    </div>
+                </div>
+
+                <p>Using your profile, budget, and career aspirations, we curate a personalized list of countries and courses. This ensures you apply to programs that are both achievable and aligned with your ambitions.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Comprehensive Research</h3>
+                        <p>We conduct extensive research on universities, programs, and countries to identify the best matches for your profile and goals.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Balanced Shortlisting</h3>
+                        <p>Creating a balanced list with dream, competitive, and safety options to maximize your admission chances.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Budget Alignment</h3>
+                        <p>Ensuring your shortlisted options align with your financial capabilities through scholarship opportunities and cost analysis.</p>
+                    </div>
+                </div>
+                
+                <h3>Shortlisting Criteria</h3>
+                <ul class="service-list">
+                    <li>Academic requirements and eligibility</li>
+                    <li>Program reputation and curriculum</li>
+                    <li>University rankings and accreditation</li>
+                    <li>Career outcomes and alumni success</li>
+                    <li>Location preferences and lifestyle factors</li>
+                    <li>Financial considerations and scholarship availability</li>
+                    <li>Admission difficulty and competition level</li>
+                </ul>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Get Personalized Shortlist</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- University Shortlisting Section -->
+            <div id="university-shortlisting" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>University Shortlisting</h2>
+                        <p>Strategic selection of target institutions</p>
+                    </div>
+                </div>
+
+                <p>Our team helps identify a balanced mix of target, reach, and safety universities. With a focused strategy, your chances of admission improve while reducing wasted time and effort.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Target University Identification</h3>
+                        <p>We identify universities where your profile strongly matches the admission criteria and program requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Reach and Safety Options</h3>
+                        <p>Creating a balanced portfolio with ambitious reach schools and secure safety options to ensure admission success.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Admission Strategy Development</h3>
+                        <p>Developing customized application strategies for each university on your shortlist to maximize your chances.</p>
+                    </div>
+                </div>
+                
+                <h3>Our Shortlisting Methodology</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>Data-Driven Approach</h4>
+                        <p>Using historical admission data and success rates to inform our recommendations.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Holistic Evaluation</h4>
+                        <p>Considering all aspects of each university including culture, location, and support services.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Personalized Fit</h4>
+                        <p>Ensuring each recommended university aligns with your academic and personal preferences.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4>Strategic Balance</h4>
+                        <p>Creating a well-balanced list that optimizes your chances while being realistic.</p>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Get University Shortlist</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+            <!-- University Transfer Section -->
+            <div id="university-transfer" class="service-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="section-title">
+                        <h2>University Transfer</h2>
+                        <p>Seamless transition between educational institutions</p>
+                    </div>
+                </div>
+
+                <p>If you're looking to transfer abroad, we guide you through credit transfers, eligibility requirements, and strong application strategies. Our aim is to ensure minimal credit loss and a smooth transition.</p>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Credit Transfer Evaluation</h3>
+                        <p>Comprehensive assessment of your current credits and how they will transfer to your target institutions, maximizing credit acceptance.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Eligibility Assessment</h3>
+                        <p>Detailed evaluation of transfer requirements, prerequisites, and application deadlines for your target universities.</p>
+                    </div>
+                </div>
+                
+                <div class="service-feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Smooth Transition Planning</h3>
+                        <p>Comprehensive planning to ensure a seamless transition between institutions with minimal academic disruption.</p>
+                    </div>
+                </div>
+                
+                <h3>Transfer Process Support</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Initial Consultation</h4>
+                            <p>Understanding your transfer goals, current academic standing, and target institutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Credit Evaluation</h4>
+                            <p>Assessing which credits will transfer and identifying any potential gaps in your academic record.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Application Strategy</h4>
+                            <p>Developing a customized application approach that highlights your transfer readiness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Transition Support</h4>
+                            <p>Providing guidance on enrollment, orientation, and academic planning at your new institution.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-actions">
+                    <a href="contact.html" class="btn btn-primary">Start Transfer Process</a>
+                    <a href="services.html" class="btn btn-secondary">View All Services</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="consultation-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Ready to Begin Your Study Abroad Journey?</h2>
+                <p>Our student guidance experts are here to help you every step of the way</p>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>MS EDU GLOBAL</h3>
+                    <p>Your trusted partner for global education opportunities since 2010.</p>
+                    <div class="social-links-top">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="#">Study in USA</a></li>
+                        <li><a href="#">Study in UK</a></li>
+                        <li><a href="#">Study in Canada</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MS EDU GLOBAL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Service Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.service-section');
+            
+            // Set default active section
+            function setActiveSection(sectionId) {
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show selected section
+                const activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                }
+                
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-section') === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Click handler for nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    setActiveSection(sectionId);
+                    
+                    // Scroll to top of sections container
+                    document.querySelector('.service-sections').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Set Profile Evaluation as default
+            setActiveSection('profile-evaluation');
+            
+            // Dropdown functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.classList.add('active');
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

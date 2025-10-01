@@ -1,0 +1,3049 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS EDU GLOBAL - Premier Study Abroad Consultants | USA, UK, Canada</title>
+    <meta name="description" content="MS EDU GLOBAL offers expert study abroad consultation for USA, UK, Canada. Visa assistance, university admissions, scholarship guidance.">
+    
+    <style>
+        /* === MS EDU GLOBAL - Enhanced Styles === */
+        :root {
+            --primary: #2f5aae;
+            --primary-dark: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #dc2626;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === Top Bar === */
+        .top-bar { background: var(--primary-dark); color: var(--white); padding: 8px 0; font-size: 14px; }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+        .contact-info span { margin-right: 20px; display: inline-flex; align-items: center; gap: 5px; }
+        .social-links-top a { color: var(--white); margin-left: 15px; text-decoration: none; transition: var(--transition); }
+        .social-links-top a:hover { color: var(--secondary); }
+
+        /* === Header === */
+        .header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        
+        /* UPDATED LOGO - Gradient Both */
+        .logo { 
+            font-size: 28px; 
+            font-weight: 700; 
+            color: transparent; 
+            background: linear-gradient(135deg, #2f5aae 0%, #2f5aae 60%, #f59e0b 80%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        .logo i { 
+            background: linear-gradient(135deg, #2f5aae 0%, #2f5aae 60%, #f59e0b 80%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .main-nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
+        .main-nav a { text-decoration: none; color: var(--text); font-weight: 500; transition: var(--transition); padding: 10px 0; position: relative; }
+        .main-nav a:hover, .main-nav a.active { color: var(--primary); }
+        .main-nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--primary); }
+
+        /* === Dropdown Menus === */
+        .dropdown { position: relative; }
+        
+        /* Services Dropdown - Compact Size */
+        .services-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        /* Universities Dropdown */
+        .universities-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        /* Show dropdown on hover */
+        .dropdown:hover .services-dropdown-content,
+        .dropdown:hover .universities-dropdown-content {
+            display: block;
+        }
+        
+        /* Category/Country items */
+        .category, .country {
+            position: relative;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 14px;
+            line-height: 1.3;
+        }
+        
+        .category:hover, .country:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* Submenu for each category */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: white;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1001;
+            border-left: 3px solid var(--primary);
+            padding: 5px 0;
+        }
+        
+        /* Submenu items */
+        .submenu-item {
+            padding: 6px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            color: #333;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .submenu-item:hover {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        
+        /* Show submenu on category hover */
+        .category:hover .submenu {
+            display: block;
+        }
+        
+        /* Remove border from last items */
+        .category:last-child,
+        .country:last-child,
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Country flag styling */
+        .country-flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* Keep existing dropdown styles for other dropdowns */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            min-width: 250px;
+            z-index: 1001;
+            display: none;
+        }
+        .dropdown.active .dropdown-menu { opacity: 1; visibility: visible; display: flex; }
+        .dropdown-menu ul { list-style: none; }
+        .dropdown-menu li { margin: 8px 0; }
+        .dropdown-menu a { color: var(--text); text-decoration: none; transition: var(--transition); display: block; padding: 5px 0; }
+        .dropdown-menu a:hover { color: var(--primary); padding-left: 10px; }
+
+        /* === Announcement Bar === */
+        .announcement-bar { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: var(--white); padding: 12px 0; position: relative; overflow: hidden; }
+        .scrolling-text { display: flex; animation: scrollText 25s linear infinite; white-space: nowrap; }
+        .scrolling-text span { padding: 0 40px; font-weight: 500; font-size: 15px; }
+        @keyframes scrollText { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* === KEN BURNS EFFECT BANNER === */
+        .hero-slider { 
+            position: relative; 
+            height: 600px; 
+            overflow: hidden; 
+        }
+        
+        .banner-slide { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            align-items: center; 
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            animation-duration: 20s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        .banner-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* Ken Burns zoom animations */
+        .banner-slide.zoom-in {
+            animation-name: kenBurnsZoomIn;
+        }
+
+        .banner-slide.zoom-out {
+            animation-name: kenBurnsZoomOut;
+        }
+
+        @keyframes kenBurnsZoomIn {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes kenBurnsZoomOut {
+            0% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .banner-slide::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            background: rgba(0, 0, 0, 0.4); 
+        }
+        
+        .banner-content { 
+            position: relative; 
+            z-index: 3;
+            color: var(--white); 
+            max-width: 650px; 
+            padding: 0 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .banner-content h1 { 
+            font-size: 3.2rem; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            line-height: 1.2; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+        }
+        
+        .banner-content p { 
+            font-size: 1.2rem; 
+            margin-bottom: 30px; 
+            opacity: 0.9; 
+        }
+        
+        .banner-buttons { 
+            display: flex; 
+            gap: 15px; 
+        }
+        
+        .btn { 
+            padding: 14px 32px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: var(--transition); 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            border: 2px solid transparent; 
+        }
+        
+        .btn-primary { 
+            background: var(--secondary); 
+            color: var(--white); 
+        }
+        
+        .btn-primary:hover { 
+            background: transparent; 
+            border-color: var(--secondary); 
+            transform: translateY(-3px); 
+        }
+        
+        .btn-secondary { 
+            background: transparent; 
+            color: var(--white); 
+            border-color: var(--white); 
+        }
+        
+        .btn-secondary:hover { 
+            background: var(--white); 
+            color: var(--primary); 
+            transform: translateY(-3px); 
+        }
+
+        /* Slide indicators */
+        .slide-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .indicator.active {
+            background: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === NEW COMBINED STATS SECTION === */
+        .combined-stats-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2f5aae 100%);
+            color: white;
+            padding: 70px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .combined-stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.03"><circle cx="50" cy="50" r="40" fill="%23ffffff"/></svg>');
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* UPDATED TEXT COLORS - Blue headings, orange descriptions */
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2f5aae; /* Blue color for headings */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #f59e0b; /* Orange color for descriptions */
+        }
+
+        /* Stats section specific colors */
+        .combined-stats-section .section-header h2 {
+            color: #f59e0b;
+        }
+        
+        .combined-stats-section .section-header p {
+            color: #f59e0b;
+        }
+
+        /* Fast Scrolling Container */
+        .fast-stats-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .fast-stats-track {
+            display: flex;
+            gap: 25px;
+            width: max-content;
+            animation: scrollFast 25s linear infinite;
+        }
+
+        .fast-stat-item {
+            flex: 0 0 240px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fast-stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+
+        .fast-stat-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .stat-image-container {
+            height: 140px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .fast-stat-item:hover .stat-image {
+            transform: scale(1.05);
+        }
+
+        .fallback-icon {
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .stat-content {
+            padding: 20px 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f59e0b;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Fast scrolling animation */
+        @keyframes scrollFast {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-265px * 9));
+            }
+        }
+
+        /* Pause animation on hover */
+        .fast-stats-container:hover .fast-stats-track {
+            animation-play-state: paused;
+        }
+
+        /* === UPDATED COMPREHENSIVE SERVICES SECTION === */
+        .services-section {
+            padding: 80px 0;
+            background: #0f172a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('images/comprehensiveservices.png') center/cover no-repeat,
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 40%);
+            z-index: 0;
+            opacity: 0.15;
+        }
+
+        .services-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Services section specific colors */
+        .services-section .section-header h2 {
+            color: #f59e0b; /* Orange on dark background */
+        }
+        
+        .services-section .section-header p {
+            color: #f59e0b; /* Orange on dark background */
+        }
+        
+        .services-carousel {
+            position: relative;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        
+        .services-track {
+            display: flex;
+            gap: 30px;
+            animation: scrollServices 40s linear infinite;
+            width: max-content;
+        }
+        
+        .service-card {
+            flex: 0 0 320px;
+            padding: 40px 30px 30px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            height: 380px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* Card background colors */
+        .service-card.student-guidance {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+        }
+        
+        .service-card.test-prep {
+            background: linear-gradient(135deg, #065f46, #10b981);
+        }
+        
+        .service-card.finance {
+            background: linear-gradient(135deg, #92400e, #f59e0b);
+        }
+        
+        .service-card.essentials {
+            background: linear-gradient(135deg, #5b21b6, #8b5cf6);
+        }
+        
+        .service-card.career {
+            background: linear-gradient(135deg, #991b1b, #ef4444);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.9);
+            z-index: 2;
+            position: relative;
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 600;
+            z-index: 2;
+            position: relative;
+            line-height: 1.3;
+        }
+        
+        .service-card p {
+            color: #e2e8f0;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            z-index: 2;
+            position: relative;
+            flex-grow: 1;
+            min-height: 96px;
+            display: flex;
+            align-items: center;
+        }
+
+        .button-container {
+            margin-top: auto;
+            height: 48px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .know-more-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
+            position: relative;
+            width: 100%;
+            height: 48px;
+            box-sizing: border-box;
+        }
+        
+        .know-more-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes scrollServices {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-350px * 5));
+            }
+        }
+        
+        .services-carousel:hover .services-track {
+            animation-play-state: paused;
+        }
+        
+        /* Control buttons for manual scrolling */
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 18px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+            position: relative;
+        }
+        
+        .control-btn:hover {
+            background: #f59e0b;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Service labels */
+        .service-label {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+            z-index: 2;
+        }
+
+        /* === HOW IT WORKS SECTION === */
+        .how-it-works-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .how-it-works-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="%232f5aae" stroke-width="2"/><circle cx="50" cy="50" r="10" fill="%232f5aae"/></svg>');
+            z-index: 0;
+        }
+        
+        .how-it-works-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .step {
+            width: 23%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(47, 90, 174, 0.4);
+        }
+        
+        .step-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step h3 {
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 15px;
+            font-weight: 600;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step p {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        /* Connecting Line */
+        .connector-line {
+            position: absolute;
+            top: 30px;
+            left: 12%;
+            width: 76%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1;
+            border-radius: 3px;
+        }
+        
+        /* Responsive Design for How It Works */
+        @media (max-width: 992px) {
+            .step {
+                width: 48%;
+                margin-bottom: 60px;
+            }
+            
+            .connector-line {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .step {
+                width: 100%;
+            }
+            
+            .how-it-works-section {
+                padding: 50px 0;
+            }
+        }
+        
+        /* Animation for steps */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .step.animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* === STUDY DESTINATIONS SECTION (MOVED UP) === */
+        .study-destinations-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #1a202c;
+            line-height: 1.6;
+            padding: 80px 20px;
+        }
+
+        .study-destinations-section header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .study-destinations-section header h1 {
+            font-size: 2.5rem;
+            color: #2f5aae;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+   
+
+
+        .study-destinations-section header p {
+            font-size: 1.2rem;
+            color: #f59e0b;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #e2e8f0;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(30, 58, 138, 0.15);
+        }
+
+        .flag-section {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .usa .flag-section {
+            background-image: url('https://flagcdn.com/w640/us.jpg');
+        }
+
+        .uk .flag-section {
+            background-image: url('https://flagcdn.com/w640/gb.jpg');
+        }
+
+        .canada .flag-section {
+            background-image: url('https://flagcdn.com/w640/ca.jpg');
+        }
+
+        .country-info {
+            padding: 20px 20px 15px;
+            text-align: center;
+            background: white;
+        }
+
+        .destination-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #1e3a8a;
+        }
+
+        .destination-card .country-desc {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .card-content {
+            padding: 0 20px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .benefits-list {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #2d3748;
+        }
+
+        .benefits-list li i {
+            color: #2f5aae;
+            margin-right: 8px;
+            margin-top: 3px;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .view-all-btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: #2f5aae;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        .view-all-btn:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+        }
+
+        /* Scrolling Universities Section */
+        .scrolling-gallery {
+            position: relative;
+            overflow: hidden;
+            padding: 30px 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        .scrolling-track {
+            display: flex;
+            animation: scrollLogos 90s linear infinite;
+            width: max-content;
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        .logo-item {
+            width: 280px;
+            height: 140px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            border-color: #2f5aae;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%);
+        }
+
+        .country-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(47, 90, 174, 0.9);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .scrolling-gallery:hover .scrolling-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-280px * 40 - 25px * 40));
+            }
+        }
+
+        /* === UPDATED FEATURED UNIVERSITIES SECTION (MOVED DOWN) === */
+        .featured-universities-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .featured-universities-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .universities-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .universities-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .universities-info {
+            flex: 1;
+            max-width: 400px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .universities-info h3 {
+            font-size: 28px;
+            color: #2f5aae;
+            margin-bottom: 15px;
+        }
+        
+        .universities-info h3 span {
+            color: #f59e0b;
+        }
+        
+        .universities-info p {
+            color: #6b7280;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        .benefits-list {
+            margin-bottom: 25px;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: #1f2937;
+            font-size: 15px;
+        }
+        
+        .benefits-list li i {
+            color: #2f5aae;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2f5aae;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: #f59e0b;
+            transform: scale(1.05);
+        }
+        
+        .universities-carousel {
+            flex: 2;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .universities-track {
+            display: flex;
+            gap: 30px;
+            animation: scrollUniversities 40s linear infinite;
+            width: max-content;
+        }
+        
+        .university-card {
+            flex: 0 0 280px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .university-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .university-image {
+            height: 180px;
+            overflow: hidden;
+            background: #f0f5ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .university-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .university-card:hover .university-image img {
+            transform: scale(1.05);
+        }
+        
+        .university-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .university-info h4 {
+            font-size: 18px;
+            color: #2f5aae;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+        
+        .university-info p {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .button-container {
+            margin-top: auto;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: #f59e0b;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .university-card:hover .read-more i {
+            transform: translateX(3px);
+        }
+
+        @keyframes scrollUniversities {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-310px * 11));
+            }
+        }
+
+        .universities-carousel:hover .universities-track {
+            animation-play-state: paused;
+        }
+
+        /* Footer */
+        .footer { background: linear-gradient(135deg, var(--primary-dark), var(--text)); color: var(--white); padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { color: var(--secondary); margin-bottom: 20px; font-size: 20px; }
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin: 10px 0; }
+        .footer-column a { color: #d1d5db; text-decoration: none; transition: var(--transition); }
+        .footer-column a:hover { color: var(--secondary); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: #9ca3af; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
+            .contact-info span { margin: 5px; display: block; }
+            .banner-content h1 { font-size: 2.2rem; }
+            .banner-buttons { flex-direction: column; align-items: center; }
+            
+            /* Stats section responsive */
+            .combined-stats-section {
+                padding: 50px 25px;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .fast-stats-track {
+                animation: scrollFast 20s linear infinite;
+            }
+            
+            .fast-stat-item {
+                flex: 0 0 220px;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .stat-image-container {
+                height: 120px;
+            }
+            
+            .services-dropdown-content,
+            .universities-dropdown-content { 
+                position: static; 
+                box-shadow: none; 
+                border-radius: 0; 
+                min-width: 100%;
+            }
+            .submenu {
+                position: static;
+                min-width: 100%;
+                border-left: none;
+                border-top: 3px solid var(--primary);
+            }
+            
+            .services-track {
+                animation: scrollServices 60s linear infinite;
+            }
+            
+            .service-card {
+                flex: 0 0 280px;
+                height: 400px;
+                padding: 30px 20px 20px 20px;
+            }
+
+            .service-card p {
+                min-height: 108px;
+            }
+            
+            /* Study destinations responsive */
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .study-destinations-section header h1 {
+                font-size: 2rem;
+            }
+            
+            .logo-item {
+                width: 250px;
+                height: 125px;
+            }
+            
+            .flag-section {
+                height: 140px;
+            }
+            
+            /* Universities responsive */
+            .universities-container {
+                flex-direction: column;
+            }
+            
+            .universities-info {
+                max-width: 100%;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            
+            .navigation-buttons {
+                justify-content: center;
+            }
+
+            .universities-track {
+                animation: scrollUniversities 60s linear infinite;
+            }
+            
+            /* Banner responsive adjustments */
+            .hero-slider {
+                height: 500px;
+            }
+            
+            .banner-content { 
+                text-align: center; 
+                padding: 0 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .combined-stats-section {
+                padding: 40px 20px;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .fast-stats-track {
+                animation: scrollFast 15s linear infinite;
+            }
+            
+            .fast-stat-item {
+                flex: 0 0 200px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+            }
+            
+            .stat-image-container {
+                height: 100px;
+            }
+            
+            .service-card {
+                flex: 0 0 260px;
+                padding: 25px 15px 15px 15px;
+            }
+            
+            .service-card h3 {
+                font-size: 20px;
+                min-height: 50px;
+            }
+            
+            .service-icon {
+                font-size: 40px;
+                height: 60px;
+            }
+            
+            .know-more-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .service-card p {
+                min-height: 120px;
+                font-size: 14px;
+            }
+            
+            /* Study destinations mobile */
+            .country-info {
+                padding: 15px 15px 10px;
+            }
+            
+            .card-content {
+                padding: 0 15px 15px;
+            }
+            
+            .logo-item {
+                width: 220px;
+                height: 110px;
+                padding: 20px;
+            }
+            
+            .flag-section {
+                height: 120px;
+            }
+            
+            /* Universities mobile */
+            .featured-universities-section {
+                padding: 50px 0;
+            }
+            
+            .university-card {
+                flex: 0 0 240px;
+                height: 340px;
+            }
+
+            .university-info {
+                padding: 15px;
+            }
+
+            .university-info h4 {
+                font-size: 16px;
+            }
+
+            .universities-track {
+                animation: scrollUniversities 40s linear infinite;
+            }
+            
+            .hero-slider {
+                height: 400px;
+            }
+            
+            .banner-content h1 { 
+                font-size: 1.8rem; 
+            }
+            
+            .banner-content p { 
+                font-size: 1rem; 
+            }
+            
+            .btn { 
+                padding: 12px 24px; 
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</span>
+                </div>
+                <div class="social-links-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- UPDATED LOGO -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    MS EDU GLOBAL
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+
+<!-- Services Dropdown -->
+<li class="dropdown">
+    <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+    <div class="services-dropdown-content" style="min-width: 280px; padding: 5px 0;">
+        <a href="studentguidance.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Guidance</a>
+        <a href="testprep-readiness.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Test Prep & Readiness</a>
+        <a href="finance-scholarships.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Finance & Scholarships</a>
+        <a href="studentessentials.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Essentials</a>
+        <a href="careerservices.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px;">Career Services</a>
+    </div>
+</li>
+
+              <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+
+                        <!-- Universities Dropdown -->
+                        <li class="dropdown">
+                            <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+                            <div class="universities-dropdown-content">
+                                <!-- USA -->
+                                <div class="country">
+                                    <span class="country-flag">🇺🇸</span> USA
+                                </div>
+                                
+                                <!-- UK -->
+                                <div class="country">
+                                    <span class="country-flag">🇬🇧</span> UK
+                                </div>
+                                
+                                <!-- Canada -->
+                                <div class="country">
+                                    <span class="country-flag">🇨🇦</span> Canada
+                                </div>
+                            </div>
+                        </li>
+
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+        </div>
+    </div>
+
+    <!-- KEN BURNS EFFECT BANNER WITH 5 IMAGES -->
+    <section class="hero-slider">
+        <!-- Slide 1 - Zoom In -->
+        <div class="banner-slide active zoom-in" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+            <div class="container">
+                <div class="banner-content">
+                    <h1>Your Gateway to Global Education Excellence</h1>
+                    <p>5000+ Students Successfully Placed in Top Universities Worldwide</p>
+                    <div class="banner-buttons">
+                        <a href="contact.html" class="btn btn-primary"><i class="fas fa-rocket"></i> Start Your Journey</a>
+                        <a href="gallery.html" class="btn btn-secondary"><i class="fas fa-play-circle"></i> Watch Success Stories</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 - Zoom Out -->
+        <div class="banner-slide zoom-out" style="background-image: url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+            <div class="container">
+                <div class="banner-content">
+                    <h1>Study in Top USA Universities</h1>
+                    <p>Get admission in Ivy League and Top 50 US Universities</p>
+                    <div class="banner-buttons">
+                        <a href="universities.html" class="btn btn-primary"><i class="fas fa-university"></i> Explore USA Universities</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 - Zoom In -->
+        <div class="banner-slide zoom-in" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+            <div class="container">
+                <div class="banner-content">
+                    <h1>Scholarship & Financial Aid Support</h1>
+                    <p>Maximize your funding opportunities with expert guidance</p>
+                    <div class="banner-buttons">
+                        <a href="finance-scholarships.html" class="btn btn-primary"><i class="fas fa-award"></i> Find Scholarships</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4 - Zoom Out (Counseling Services) -->
+        <div class="banner-slide zoom-out" style="background-image: url('https://images.unsplash.com/photo-1582848890404-ed087c1b3f0c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <div class="container">
+                <div class="banner-content">
+                    <h1>Personalized Counseling Sessions</h1>
+                    <p>One-on-one guidance with our expert education counselors</p>
+                    <div class="banner-buttons">
+                        <a href="studentguidance.html" class="btn btn-primary"><i class="fas fa-user-graduate"></i> Book Consultation</a>
+                        <a href="contact.html" class="btn btn-secondary"><i class="fas fa-calendar-check"></i> Schedule Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 5 - Zoom In (Student Community) -->
+        <div class="banner-slide zoom-in" style="background-image: url('https://images.unsplash.com/photo-1601513042965-c4df7bc7a224?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <div class="container">
+                <div class="banner-content">
+                    <h1>Student Community & Networking</h1>
+                    <p>Join our vibrant community of international students</p>
+                    <div class="banner-buttons">
+                        <a href="careerservices.html" class="btn btn-primary"><i class="fas fa-users"></i> Join Community</a>
+                        <a href="careerservices.html" class="btn btn-secondary"><i class="fas fa-network-wired"></i> Network Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide Indicators (5 dots for 5 images) -->
+        <div class="slide-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+            <div class="indicator" data-slide="2"></div>
+            <div class="indicator" data-slide="3"></div>
+            <div class="indicator" data-slide="4"></div>
+        </div>
+    </section>
+
+    <!-- NEW COMBINED STATS SECTION -->
+    <section class="combined-stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Global Education Impact</h2>
+                <p>Transforming lives through international education opportunities</p>
+            </div>
+            
+            <!-- Full Scrolling Stats Section -->
+            <div class="fast-stats-container">
+                <div class="fast-stats-track">
+                    <!-- Stat 1 - Visa Success Rate -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/visasuccessrate.png" alt="Visa Success Rate" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Visa Success Rate</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 2 - Scholarships Secured -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/scholarshipssecured.png" alt="Scholarships Secured" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">50M+</span>
+                            <span class="stat-label">Scholarships Secured</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 3 - Countries Covered -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/countriescovered.png" alt="Countries Covered" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Countries Covered</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 4 - Students Helped -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/studentshelped.png" alt="Students Helped" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Students Helped</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 5 - University Partners -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/universitypartners.png" alt="University Partners" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">University Partners</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 6 - USA Universities -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/USAUniversities.png" alt="USA Universities" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">35</span>
+                            <span class="stat-label">USA Universities</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 7 - Canada Universities -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/canadauniversities.png" alt="Canada Universities" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">13</span>
+                            <span class="stat-label">Canada Universities</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 8 - UK Universities -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/UKUniversities.png" alt="UK Universities" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">UK Universities</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 9 - Admission Success -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/visaapproved.png" alt="Admission Success" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Admission Success</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicates for continuous scrolling -->
+                    <!-- Stat 1 - Visa Success Rate -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/visasuccessrate.png" alt="Visa Success Rate" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Visa Success Rate</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 2 - Scholarships Secured -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/scholarshipssecured.png" alt="Scholarships Secured" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">50M+</span>
+                            <span class="stat-label">Scholarships Secured</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 3 - Countries Covered -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/countriescovered.png" alt="Countries Covered" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Countries Covered</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 4 - Students Helped -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/studentshelped.png" alt="Students Helped" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Students Helped</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 5 - University Partners -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/universitypartners.png" alt="University Partners" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">University Partners</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 6 - USA Universities -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/USAUniversities.png" alt="USA Universities" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">35</span>
+                            <span class="stat-label">USA Universities</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 7 - Canada Universities -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/canadauniversities.png" alt="Canada Universities" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">13</span>
+                            <span class="stat-label">Canada Universities</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 8 - UK Universities -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/UKUniversities.png" alt="UK Universities" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">UK Universities</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stat 9 - Admission Success -->
+                    <div class="fast-stat-item">
+                        <div class="stat-image-container">
+                            <img src="images/visaapproved.png" alt="Admission Success" class="stat-image">
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Admission Success</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATED Comprehensive Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-content">
+                <div class="section-header">
+                    <h2>Our Comprehensive Services</h2>
+                    <p>End-to-end support for your international education journey with our expert guidance</p>
+                </div>
+                
+                <div class="services-carousel">
+                    <div class="services-track">
+                        <!-- Service 1 -->
+                        <div class="service-card student-guidance">
+                            <div class="service-label">Guidance</div>
+                            <div class="service-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Student Guidance</h3>
+                            <p>Complete counseling and profile evaluation for your study abroad journey with personalized support and university selection.</p>
+                            <div class="button-container">
+                                <a href="studentguidance.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 2 -->
+                        <div class="service-card test-prep">
+                            <div class="service-label">Preparation</div>
+                            <div class="service-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Test Prep & Readiness</h3>
+                            <p>IELTS, TOEFL, GRE, GMAT coaching with expert instructors, mock tests, and comprehensive test strategies.</p>
+                            <div class="button-container">
+                                <a href="testprep-readiness.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 3 -->
+                        <div class="service-card finance">
+                            <div class="service-label">Financial Aid</div>
+                            <div class="service-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h3>Finance & Scholarships</h3>
+                            <p>Scholarship and education loan assistance to fund your education with financial planning and application support.</p>
+                            <div class="button-container">
+                                <a href="finance-scholarships.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 4 -->
+                        <div class="service-card essentials">
+                            <div class="service-label">Essentials</div>
+                            <div class="service-icon">
+                                <i class="fas fa-passport"></i>
+                            </div>
+                            <h3>Student Essentials</h3>
+                            <p>Complete visa application support, accommodation assistance, health insurance, and pre-departure orientation.</p>
+                            <div class="button-container">
+                                <a href="studentessentials.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Service 5 -->
+                        <div class="service-card career">
+                            <div class="service-label">Career</div>
+                            <div class="service-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Career Services</h3>
+                            <p>Internship and job search guidance, resume building, LinkedIn optimization, and career counseling for your future.</p>
+                            <div class="button-container">
+                                <a href="careerservices.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Duplicate for continuous scrolling -->
+                        <div class="service-card student-guidance">
+                            <div class="service-label">Guidance</div>
+                            <div class="service-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3>Student Guidance</h3>
+                            <p>Complete counseling and profile evaluation for your study abroad journey with personalized support and university selection.</p>
+                            <div class="button-container">
+                                <a href="studentguidance.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card test-prep">
+                            <div class="service-label">Preparation</div>
+                            <div class="service-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h3>Test Prep & Readiness</h3>
+                            <p>IELTS, TOEFL, GRE, GMAT coaching with expert instructors, mock tests, and comprehensive test strategies.</p>
+                            <div class="button-container">
+                                <a href="testprep-readiness.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card finance">
+                            <div class="service-label">Financial Aid</div>
+                            <div class="service-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h3>Finance & Scholarships</h3>
+                            <p>Scholarship and education loan assistance to fund your education with financial planning and application support.</p>
+                            <div class="button-container">
+                                <a href="finance-scholarships.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card essentials">
+                            <div class="service-label">Essentials</div>
+                            <div class="service-icon">
+                                <i class="fas fa-passport"></i>
+                            </div>
+                            <h3>Student Essentials</h3>
+                            <p>Complete visa application support, accommodation assistance, health insurance, and pre-departure orientation.</p>
+                            <div class="button-container">
+                                <a href="studentessentials.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card career">
+                            <div class="service-label">Career</div>
+                            <div class="service-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Career Services</h3>
+                            <p>Internship and job search guidance, resume building, LinkedIn optimization, and career counseling for your future.</p>
+                            <div class="button-container">
+                                <a href="careerservices.html" class="know-more-btn">Know More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="control-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="control-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+        <div class="container">
+            <div class="how-it-works-content">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p>Four Simple Steps Between You & Your Dream</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="connector-line"></div>
+                    
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h3>Shortlist University & Programs</h3>
+                        <p>Start by creating your profile on our platform. Our cutting-edge platform will suggest Universities unique to your needs. Shortlist your preferred Universities and start applying.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Application Reviewed by University</h3>
+                        <p>The University will review your application and if accepted, you will receive your Letter of Acceptance. You've crossed the halfway mark in your study abroad journey.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <h3>Time to Apply for Visa</h3>
+                        <p>Our Overseas Education Consultants will help you throughout your Visa application process, interview preparation, and ensure your application is error-free for higher chances of approval.</p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <h3>Start Your Study Abroad Journey</h3>
+                        <p>Now the hard part is over. All that's left is booking your flight and starting your journey. Our consultants can answer any last-minute queries regarding your travel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STUDY DESTINATIONS SECTION (MOVED UP) -->
+    <section class="study-destinations-section">
+        <div class="container">
+            <header>
+                <h1>Study Destinations</span></h1>
+                <p>Explore our partner universities in top study destinations around the world</p>
+            </header>
+            
+            <div class="destinations-grid">
+                <!-- USA Card -->
+                <div class="destination-card usa">
+                    <div class="flag-section"></div>
+                    <div class="country-info">
+                        <h3>United States of America</h3>
+                        <p class="country-desc">Top-ranked universities with diverse programs</p>
+                    </div>
+                    <div class="card-content">
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> Special scholarships for MS EDU GLOBAL students</li>
+                            <li><i class="fas fa-check"></i> Application fee waiver</li>
+                            <li><i class="fas fa-check"></i> Direct admission support</li>
+                        </ul>
+                        <a href="usauniversities.html" class="view-all-btn">View All USA Universities</a>
+                    </div>
+                </div>
+                
+                <!-- UK Card -->
+                <div class="destination-card uk">
+                    <div class="flag-section"></div>
+                    <div class="country-info">
+                        <h3>United Kingdom</h3>
+                        <p class="country-desc">World-class education with rich history</p>
+                    </div>
+                    <div class="card-content">
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> Fast-track application process</li>
+                            <li><i class="fas fa-check"></i> Scholarship opportunities</li>
+                            <li><i class="fas fa-check"></i> Visa assistance</li>
+                        </ul>
+                        <a href="ukuniversities.html" class="view-all-btn">View All UK Universities</a>
+                    </div>
+                </div>
+                
+                <!-- Canada Card -->
+                <div class="destination-card canada">
+                    <div class="flag-section"></div>
+                    <div class="country-info">
+                        <h3>Canada</h3>
+                        <p class="country-desc">Quality education with post-study work opportunities</p>
+                    </div>
+                    <div class="card-content">
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check"></i> Post-study work permit support</li>
+                            <li><i class="fas fa-check"></i> Affordable tuition fees</li>
+                            <li><i class="fas fa-check"></i> High quality of life</li>
+                        </ul>
+                        <a href="cauniversities.html" class="view-all-btn">View All Canada Universities</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrolling Universities Section -->
+            <div class="scrolling-gallery">
+                <div class="scrolling-track" id="all-universities">
+                    <!-- All universities will be added by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPDATED FEATURED UNIVERSITIES SECTION (MOVED DOWN) -->
+    <section class="featured-universities-section">
+        <div class="container">
+            <div class="universities-content">
+                <div class="section-header">
+                    <h2>Our <span>Exclusive Partners</span> in the USA</h2>
+                    <p>Explore our Exclusive Partners in the USA! Avail benefits such as Scholarships, Application fee waiver, Quick Admission process and talk to University Representatives directly.</p>
+                </div>
+                
+                <div class="universities-container">
+                    <div class="universities-info">
+                        <h3>Featured <span>Universities</span></h3>
+                        <p>Our exclusive university partners offer special benefits to MS EDU GLOBAL students:</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> Special scholarships for MS EDU GLOBAL students</li>
+                            <li><i class="fas fa-check-circle"></i> Application fee waiver</li>
+                            <li><i class="fas fa-check-circle"></i> Quick admission process</li>
+                            <li><i class="fas fa-check-circle"></i> Direct access to university representatives</li>
+                        </ul>
+                        <div class="navigation-buttons">
+                            <button class="nav-btn prev-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-btn next-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="universities-carousel">
+                        <div class="universities-track">
+                            <!-- University 1 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AdelphiUniversity.jpg" alt="Adelphi University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Adelphi University</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 2 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AndersonUniversity.png" alt="Anderson University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Anderson University</h4>
+                                    <p>South Carolina, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 3 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/BaptistUniversityofFlorida.png" alt="Baptist University of Florida">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Baptist University of Florida</h4>
+                                    <p>Florida, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 4 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CampbellsvilleUniversity.png" alt="Campellsville University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Campellsville University</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 5 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CumberlandUniversity.png" alt="Cumberland University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Cumberland University</h4>
+                                    <p>Tennessee, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 6 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/FaulknerUniversity.png" alt="Faulkner University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Faulkner University</h4>
+                                    <p>Alabama, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 7 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/GoldenGateUniversity.png" alt="Golden Gate University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Golden Gate University</h4>
+                                    <p>California, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 8 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/St.FrancisCollege.png" alt="St. Francis College">
+                                </div>
+                                <div class="university-info">
+                                    <h4>St. Francis College</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 9 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/UniversityCumberlands,png.jpg" alt="University of the Cumberlands">
+                                </div>
+                                <div class="university-info">
+                                    <h4>University of the Cumberlands</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 10 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WaylandBaptistUniversity.png" alt="Wayland Baptist University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wayland Baptist University</h4>
+                                    <p>Texas, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 11 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WittenburgUniversity.png" alt="Wittenburg University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wittenburg University</h4>
+                                    <p>Ohio, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Duplicates for continuous scrolling -->
+                            <!-- University 1 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AdelphiUniversity.jpg" alt="Adelphi University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Adelphi University</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 2 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/AndersonUniversity.png" alt="Anderson University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Anderson University</h4>
+                                    <p>South Carolina, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 3 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/BaptistUniversityofFlorida.png" alt="Baptist University of Florida">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Baptist University of Florida</h4>
+                                    <p>Florida, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 4 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CampbellsvilleUniversity.png" alt="Campellsville University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Campellsville University</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 5 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/CumberlandUniversity.png" alt="Cumberland University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Cumberland University</h4>
+                                    <p>Tennessee, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 6 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/FaulknerUniversity.png" alt="Faulkner University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Faulkner University</h4>
+                                    <p>Alabama, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 7 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/GoldenGateUniversity.png" alt="Golden Gate University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Golden Gate University</h4>
+                                    <p>California, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 8 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/St.FrancisCollege.png" alt="St. Francis College">
+                                </div>
+                                <div class="university-info">
+                                    <h4>St. Francis College</h4>
+                                    <p>New York, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 9 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/UniversityCumberlands,png.jpg" alt="University of the Cumberlands">
+                                </div>
+                                <div class="university-info">
+                                    <h4>University of the Cumberlands</h4>
+                                    <p>Kentucky, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 10 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WaylandBaptistUniversity.png" alt="Wayland Baptist University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wayland Baptist University</h4>
+                                    <p>Texas, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- University 11 -->
+                            <div class="university-card">
+                                <div class="university-image">
+                                    <img src="images/WittenburgUniversity.png" alt="Wittenburg University">
+                                </div>
+                                <div class="university-info">
+                                    <h4>Wittenburg University</h4>
+                                    <p>Ohio, USA</p>
+                                    <div class="button-container">
+                                        <span class="read-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+
+    <a href="index.html" class="logo" style="font-size: 24px; margin-bottom: 15px; display: inline-block;">
+        <i class="fas fa-graduation-cap"></i>
+
+                    MS EDU GLOBAL
+    </a>
+                    <p>Your trusted partner for global education opportunities since 2010.</p>
+                    <div class="social-links-top">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="universities.html">Study in USA</a></li>
+                        <li><a href="universities.html">Study in UK</a></li>
+                        <li><a href="universities.html">Study in Canada</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MS EDU GLOBAL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script>
+        // KEN BURNS BANNER FUNCTIONALITY FOR 5 IMAGES
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        let autoSlideInterval;
+        let isAutoSliding = true;
+
+        function showSlide(n) {
+            // Remove active class from all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Update current slide
+            currentSlide = (n + totalSlides) % totalSlides;
+            
+            // Set active slide
+            slides[currentSlide].classList.add('active');
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function startAutoSlide() {
+            // Clear any existing interval
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+            // Start new interval (change every 6 seconds)
+            autoSlideInterval = setInterval(nextSlide, 6000);
+            isAutoSliding = true;
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+                isAutoSliding = false;
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show first slide initially
+            showSlide(0);
+            
+            // Start auto slide
+            startAutoSlide();
+            
+            // Add click events to indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    showSlide(index);
+                    // Restart auto slide when manually changing slides
+                    if (isAutoSliding) {
+                        startAutoSlide();
+                    }
+                });
+            });
+            
+            // Enhanced hover functionality for categories and countries
+            const categories = document.querySelectorAll('.category');
+            const countries = document.querySelectorAll('.country');
+            
+            categories.forEach(category => {
+                category.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f0f7ff';
+                });
+                
+                category.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+            });
+            
+            countries.forEach(country => {
+                country.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f0f7ff';
+                });
+                
+                country.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = '';
+                });
+            });
+            
+            // Keep existing functionality for other dropdowns
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            function closeAllDropdowns(){
+                dropdowns.forEach(d=>d.classList.remove('active'));
+            }
+            
+            dropdowns.forEach(dropdown=>{
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click',function(e){
+                        e.preventDefault(); 
+                        e.stopPropagation();
+                        dropdowns.forEach(d=>{
+                            if(d!==dropdown) d.classList.remove('active');
+                        });
+                        dropdown.classList.toggle('active');
+                    });
+                }
+            });
+            
+            document.addEventListener('click',function(){ 
+                closeAllDropdowns(); 
+            });
+            
+            // Animation for How It Works steps
+            const steps = document.querySelectorAll('.step');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            steps.forEach(step => {
+                observer.observe(step);
+            });
+            
+            // Comprehensive Services Carousel Controls
+            const track = document.querySelector('.services-track');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const cardWidth = serviceCards[0].offsetWidth + 30; // width + gap
+            
+            let scrollPosition = 0;
+            const maxScroll = -(cardWidth * (serviceCards.length / 2 - 5));
+            
+            // Manual controls
+            if (prevBtn && nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    scrollPosition -= cardWidth;
+                    if (scrollPosition < maxScroll) {
+                        scrollPosition = 0;
+                    }
+                    track.style.transform = `translateX(${scrollPosition}px)`;
+                });
+                
+                prevBtn.addEventListener('click', function() {
+                    scrollPosition += cardWidth;
+                    if (scrollPosition > 0) {
+                        scrollPosition = maxScroll + cardWidth;
+                    }
+                    track.style.transform = `translateX(${scrollPosition}px)`;
+                });
+            }
+            
+            // Pause animation on hover
+            const carousel = document.querySelector('.services-carousel');
+            carousel.addEventListener('mouseenter', function() {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                track.style.animationPlayState = 'running';
+            });
+            
+            // Stats Section Image Error Handling
+            const statImages = document.querySelectorAll('.stat-image');
+            
+            statImages.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    const container = this.parentElement;
+                    const altText = this.alt.toLowerCase();
+                    
+                    // Set appropriate fallback icon based on alt text
+                    let iconClass = 'fas fa-chart-line'; // default icon
+                    
+                    if (altText.includes('visa')) {
+                        iconClass = 'fas fa-passport';
+                    } else if (altText.includes('scholarship')) {
+                        iconClass = 'fas fa-award';
+                    } else if (altText.includes('countr')) {
+                        iconClass = 'fas fa-globe';
+                    } else if (altText.includes('student')) {
+                        iconClass = 'fas fa-user-graduate';
+                    } else if (altText.includes('universit')) {
+                        iconClass = 'fas fa-university';
+                    } else if (altText.includes('usa')) {
+                        iconClass = 'fas fa-flag-usa';
+                    } else if (altText.includes('canada')) {
+                        iconClass = 'fas fa-maple-leaf';
+                    } else if (altText.includes('uk')) {
+                        iconClass = 'fas fa-landmark';
+                    } else if (altText.includes('admission') || altText.includes('success')) {
+                        iconClass = 'fas fa-check-circle';
+                    }
+                    
+                    container.innerHTML = `<i class="${iconClass} fallback-icon"></i>`;
+                });
+            });
+
+            // Number counting animation for stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(number => {
+                const originalText = number.textContent;
+                let target;
+                
+                if (originalText.includes('%')) {
+                    target = parseInt(originalText);
+                } else if (originalText.includes('M+')) {
+                    target = parseInt(originalText);
+                } else if (originalText.includes('+')) {
+                    target = parseInt(originalText);
+                } else {
+                    target = parseInt(originalText);
+                }
+                
+                let current = 0;
+                const increment = target / 20;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                        number.textContent = originalText;
+                    } else {
+                        if (originalText.includes('%')) {
+                            number.textContent = Math.floor(current) + '%';
+                        } else if (originalText.includes('M+')) {
+                            number.textContent = Math.floor(current) + 'M+';
+                        } else if (originalText.includes('+')) {
+                            number.textContent = Math.floor(current) + '+';
+                        } else {
+                            number.textContent = Math.floor(current);
+                        }
+                    }
+                }, 50);
+            });
+            
+            // Universities Carousel Controls
+            const universitiesTrack = document.querySelector('.universities-track');
+            const universitiesPrevBtn = document.querySelector('.universities-container .prev-btn');
+            const universitiesNextBtn = document.querySelector('.universities-container .next-btn');
+            const universityCards = document.querySelectorAll('.university-card');
+            const universityCardWidth = universityCards[0].offsetWidth + 30;
+            
+            let universitiesScrollPosition = 0;
+            const universitiesMaxScroll = -(universityCardWidth * (universityCards.length / 2 - 11));
+            
+            // Manual controls for universities
+            if (universitiesPrevBtn && universitiesNextBtn) {
+                universitiesNextBtn.addEventListener('click', function() {
+                    universitiesScrollPosition -= universityCardWidth;
+                    if (universitiesScrollPosition < universitiesMaxScroll) {
+                        universitiesScrollPosition = 0;
+                    }
+                    universitiesTrack.style.transform = `translateX(${universitiesScrollPosition}px)`;
+                });
+                
+                universitiesPrevBtn.addEventListener('click', function() {
+                    universitiesScrollPosition += universityCardWidth;
+                    if (universitiesScrollPosition > 0) {
+                        universitiesScrollPosition = universitiesMaxScroll + universityCardWidth;
+                    }
+                    universitiesTrack.style.transform = `translateX(${universitiesScrollPosition}px)`;
+                });
+            }
+            
+            // Pause animation on hover for universities
+            const universitiesCarousel = document.querySelector('.universities-carousel');
+            universitiesCarousel.addEventListener('mouseenter', function() {
+                universitiesTrack.style.animationPlayState = 'paused';
+            });
+            
+            universitiesCarousel.addEventListener('mouseleave', function() {
+                universitiesTrack.style.animationPlayState = 'running';
+            });
+
+            // Image error handling for universities
+            const universityImages = document.querySelectorAll('.university-image img');
+            
+            universityImages.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    const container = this.parentElement;
+                    container.innerHTML = '<i class="fas fa-university fallback-icon" style="font-size: 3rem; color: #2f5aae;"></i>';
+                });
+            });
+
+            // STUDY DESTINATIONS - Populate all universities
+            const universities = {
+                usa: [
+                    { name: "Adelphi University", logo: "images/Adelphi.png" },
+                    { name: "Anderson University", logo: "images/Anderson-University-Logo.png" },
+                    { name: "Baptist University", logo: "images/BaptistUniversity.png" },
+                    { name: "Campbellsville University", logo: "images/Campbellsville-University.png" },
+                    { name: "Cumberland University", logo: "images/Cumberland-University-logo.png" },
+                    { name: "Faulkner University", logo: "images/Faulkner-University.png" },
+                    { name: "Golden Gate University", logo: "images/Golden-Gate-University-Logo.jpg" },
+                    { name: "St. Francis University", logo: "images/St.francis.png" },
+                    { name: "University Of The Cumberlands", logo: "images/University-Of-The-Cumberlands.png" },
+                    { name: "Wayland Baptist University", logo: "images/Wayland-Baptist-University-Logo.png" },
+                    { name: "Wittenberg University", logo: "images/wittenberg-logo.jpg" },
+                    { name: "Marshall University", logo: "images/Marshall-University-Logo.png" },
+                    { name: "University of Toledo", logo: "images/University_of_Toledo_Logo.png" },
+                    { name: "Murray State University", logo: "images/Murray_State_University_Logo.png" },
+                    { name: "University of Louisville", logo: "images/University-of-Louisville-logo.png" },
+                    { name: "University of South Alabama", logo: "images/University-of-South-Alabama-Logo.png" },
+                    { name: "Radford University", logo: "images/Radford-Logo.png" },
+                    { name: "Purdue University", logo: "images/Purdueuniversity.png" },
+                    { name: "Portland State University", logo: "images/Portland_State_University_Logo.png" },
+                    { name: "Florida Polytechnic University", logo: "images/Florida-Poly-Logo-2.png" },
+                    { name: "Hult International Business School", logo: "images/Hult-Logo-1 (2).png" },
+                    { name: "Liberty University", logo: "images/Liberty_university_logo-Transparent.png" },
+                    { name: "Webster University", logo: "images/Webster_University-Logo.png" },
+                    { name: "Westcliff University", logo: "images/Westcliff-University_HB_Tagline.png" },
+                    { name: "Trine University", logo: "images/Trine_University_Logo.png" },
+                    { name: "Concordia University Chicago", logo: "images/Concordio_University_Chicago_Logo.png" },
+                    { name: "Keiser University", logo: "images/Keiser-University.png" },
+                    { name: "University of Central Florida", logo: "images/centralflorida_logo.png" },
+                    { name: "Menlo College", logo: "images/Menlo_college_logo.png" },
+                    { name: "Massachusetts College of Pharmacy", logo: "images/MassachptusCPharmacyHS-Logo.jpg" },
+                    { name: "Lake Land College", logo: "images/Lake_Land_College_logo.jpeg" },
+                    { name: "Florida Southern College", logo: "images/FloridaSouthernC-Logo.png" },
+                    { name: "Edmonds College", logo: "images/Edmonds_College_Logo (1).png" },
+                    { name: "Lane Community College", logo: "images/Lane_Community_College_Logo.png" },
+                    { name: "Illinois Eastern Community College", logo: "images/IECC_Logo (1).png" }
+                ],
+                canada: [
+                    { name: "St. Clair College", logo: "images/stclaircollegelogo.jpg" },
+                    { name: "University Of Canada West", logo: "images/University-Of-Canada-West.png" },
+                    { name: "Toronto School Of Management", logo: "images/Toronto-School-Of-Management.png" },
+                    { name: "Trebas Institute", logo: "images/Trebas-Logo.png" },
+                    { name: "Niagara College Canada", logo: "images/Niagara-College-Canada-Logo.png" },
+                    { name: "Canada College", logo: "images/Canada-College-Logo-1024x136-1.png" },
+                    { name: "Canadian College", logo: "images/CanadiancollegeCTB-Logo.png" },
+                    { name: "Niagara University", logo: "images/Niagara-University-Logo.png" },
+                    { name: "Matrix College", logo: "images/Matrix_College_Logo.png" },
+                    { name: "Ascent College", logo: "images/Ascent-College-Logo.png" },
+                    { name: "Cegep Marie Victorin", logo: "images/Cegep-Marie-Victorin-Logo (1).png" },
+                    { name: "Cegep de la Gaspesie", logo: "images/Cegep_gim_logo (1).png" },
+                    { name: "Max the Mutt College", logo: "images/Max-the-Mutt-College-of-Animation-Art-and-Design-Logo (1).png" }
+                ],
+                uk: [
+                    { name: "University for the Creative Arts", logo: "images/UCA-Favicon.png" },
+                    { name: "Canterbury Christ Church University", logo: "images/CCCU_Logo.png" },
+                    { name: "University of South Wales", logo: "images/USW-Logo.png" },
+                    { name: "St. George's University", logo: "images/st-georges-university-logo.png" },
+                    { name: "Hult International Business School", logo: "images/Hult-Logo-1 (1).png" }
+                ]
+            };
+
+            // Function to populate all universities
+            function populateAllUniversities() {
+                const container = document.getElementById('all-universities');
+                
+                // Combine all universities into one array
+                const allUniversities = [
+                    ...universities.usa.map(uni => ({ ...uni, country: "USA" })),
+                    ...universities.canada.map(uni => ({ ...uni, country: "Canada" })),
+                    ...universities.uk.map(uni => ({ ...uni, country: "UK" }))
+                ];
+                
+                // Add universities multiple times for continuous scrolling
+                for (let i = 0; i < 3; i++) {
+                    allUniversities.forEach(uni => {
+                        const uniElement = document.createElement('div');
+                        uniElement.className = 'logo-item';
+                        uniElement.innerHTML = `
+                            <img src="${uni.logo}" alt="${uni.name}">
+                            <div class="country-badge">${uni.country}</div>
+                        `;
+                        container.appendChild(uniElement);
+                    });
+                }
+            }
+
+            // Populate universities for study destinations section
+            populateAllUniversities();
+            
+            console.log('MS EDU GLOBAL website loaded with 5-image Ken Burns banner!');
+            console.log('Total slides: ' + totalSlides);
+            console.log('Total indicators: ' + indicators.length);
+        });
+    </script>
+</body>
+</html>
