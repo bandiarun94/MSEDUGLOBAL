@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canada Universities - MS EDU GLOBAL | Study in Canada</title>
+    <meta name="description" content="Explore top Canada universities with MS EDU GLOBAL. Get admission assistance, scholarship guidance, and visa support for studying in Canada.">
+    
+    <style>
+        /* === MS EDU GLOBAL - Enhanced Styles === */
+        :root {
+            --primary: #2f5aae;
+            --primary-dark: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #dc2626;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === Top Bar === */
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links-top a {
+            color: var(--white);
+            margin-left: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links-top a:hover {
+            color: var(--secondary);
+        }
+
+        /* === Header === */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        /* UPDATED LOGO - Gradient Both */
+        .logo { 
+            font-size: 28px; 
+            font-weight: 700; 
+            color: transparent; 
+            background: linear-gradient(135deg, #2f5aae 0%, #2f5aae 60%, #f59e0b 80%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        .logo i { 
+            background: linear-gradient(135deg, #2f5aae 0%, #2f5aae 60%, #f59e0b 80%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* === Dropdown Menus === */
+        .dropdown { position: relative; }
+        
+        /* Services Dropdown - Compact Size */
+        .services-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        /* Universities Dropdown */
+        .universities-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        /* Show dropdown on hover */
+        .dropdown:hover .services-dropdown-content,
+        .dropdown:hover .universities-dropdown-content {
+            display: block;
+        }
+        
+        /* Category/Country items */
+        .category, .country {
+            position: relative;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 14px;
+            line-height: 1.3;
+        }
+        
+        .category:hover, .country:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* Submenu for each category */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: white;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1001;
+            border-left: 3px solid var(--primary);
+            padding: 5px 0;
+        }
+        
+        /* Submenu items */
+        .submenu-item {
+            padding: 6px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            color: #333;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .submenu-item:hover {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        
+        /* Show submenu on category hover */
+        .category:hover .submenu {
+            display: block;
+        }
+        
+        /* Remove border from last items */
+        .category:last-child,
+        .country:last-child,
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Country flag styling */
+        .country-flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* === Announcement Bar === */
+        .announcement-bar { 
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); 
+            color: var(--white); 
+            padding: 12px 0; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .scrolling-text { 
+            display: flex; 
+            animation: scrollText 25s linear infinite; 
+            white-space: nowrap; 
+        }
+        .scrolling-text span { 
+            padding: 0 40px; 
+            font-weight: 500; 
+            font-size: 15px; 
+        }
+        @keyframes scrollText { 
+            0% { transform: translateX(100%); } 
+            100% { transform: translateX(-100%); } 
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #e69008;
+            transform: translateY(-3px);
+        }
+
+        /* === Canada Universities Hero Section === */
+        .canada-hero {
+            background: linear-gradient(135deg, #d52b1e, #2f5aae);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .canada-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .canada-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .canada-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .canada-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* === Canada Universities Content === */
+        .canada-content {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Universities Filter */
+        .universities-filter {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-header h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .filter-search {
+            position: relative;
+            max-width: 300px;
+        }
+
+        .filter-search input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .filter-search input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(47, 90, 174, 0.1);
+        }
+
+        .filter-search i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .filter-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .filter-group {
+            margin-bottom: 0;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 14px 15px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 15px;
+            background: var(--white);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .filter-select:hover {
+            border-color: var(--primary);
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(47, 90, 174, 0.1);
+        }
+
+        /* Results Header */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .results-count {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .results-count span {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .sort-options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sort-options label {
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .sort-options .filter-select {
+            width: auto;
+            min-width: 180px;
+        }
+
+        /* Universities Grid */
+        .universities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .university-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .university-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .university-logo-container {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            position: relative;
+        }
+
+        .university-logo-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.05));
+        }
+
+        .university-logo {
+            max-width: 100%;
+            max-height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        .university-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--secondary), #e69008);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .university-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .university-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .university-location {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .university-location i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        .university-features {
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .feature i {
+            color: var(--primary);
+            margin-right: 12px;
+            font-size: 0.8rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .feature strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .university-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-outline {
+            padding: 12px 20px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Why Study in Canada Section */
+        .why-canada-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .why-canada-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .why-canada-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border-top: 5px solid var(--primary);
+        }
+
+        .why-canada-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .why-canada-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .why-canada-icon i {
+            font-size: 36px;
+            color: var(--white);
+        }
+
+        .why-canada-card h3 {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .why-canada-card p {
+            color: var(--text-light);
+        }
+
+        /* Application Process */
+        .application-process {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .process-step {
+            width: 23%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(47, 90, 174, 0.4);
+        }
+
+        .step-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            color: var(--text);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .connector-line {
+            position: absolute;
+            top: 30px;
+            left: 12%;
+            width: 76%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1;
+            border-radius: 3px;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-avatar i {
+            color: var(--white);
+            font-size: 24px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--primary);
+            opacity: 0.2;
+            font-size: 40px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* === Footer === */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--text));
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin: 10px 0;
+        }
+
+        .footer-column a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* === Responsive Design === */
+        @media (max-width: 768px) {
+            .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
+            .contact-info span { margin: 5px; display: block; }
+            .canada-hero h1 { font-size: 2.2rem; }
+            .hero-stats { gap: 20px; }
+            .stat-number { font-size: 2rem; }
+            .universities-grid { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; gap: 40px; }
+            .process-step { width: 100%; }
+            .connector-line { display: none; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; justify-content: center; }
+            .main-nav ul { gap: 15px; }
+            .filter-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .filter-search { max-width: 100%; }
+            .results-header { flex-direction: column; gap: 15px; align-items: flex-start; }
+            .why-canada-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .why-canada-grid { grid-template-columns: 1fr; }
+            .filter-options { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Hyderabad - India</span>
+                </div>
+                <div class="social-links-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- UPDATED LOGO -->
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    MS EDU GLOBAL
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+                        <!-- Services Dropdown -->
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="services-dropdown-content">
+                                <a href="studentguidance.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Guidance</a>
+                                <a href="testprep-readiness.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Test Prep & Readiness</a>
+                                <a href="finance-scholarships.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Finance & Scholarships</a>
+                                <a href="studentessentials.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Essentials</a>
+                                <a href="careerservices.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px;">Career Services</a>
+                            </div>
+                        </li>
+
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+
+<!-- Universities Dropdown -->
+<li class="dropdown">
+    <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+    <div class="universities-dropdown-content">
+        <!-- USA -->
+        <div class="country" data-country="USA">
+            <span class="country-flag">🇺🇸</span> USA
+        </div>
+        
+        <!-- UK -->
+        <div class="country" data-country="UK">
+            <span class="country-flag">🇬🇧</span> UK
+        </div>
+        
+        <!-- Canada -->
+        <div class="country" data-country="Canada">
+            <span class="country-flag">🇨🇦</span> Canada
+        </div>
+    </div>
+</li>
+
+
+<script>
+// Make country items clickable
+document.addEventListener('DOMContentLoaded', function() {
+    const countries = document.querySelectorAll('.country');
+    
+    countries.forEach(country => {
+        country.addEventListener('click', function() {
+            const countryName = this.getAttribute('data-country');
+            
+            // Map country names to their respective pages
+            const countryPages = {
+                'USA': 'usauniversities.html',
+                'UK': 'ukuniversities.html', 
+                'Canada': 'canadauniversities.html'
+            };
+            
+            const page = countryPages[countryName];
+            if (page) {
+                window.location.href = page;
+            }
+        });
+        
+        // Add hover effects
+        country.style.cursor = 'pointer';
+    });
+});
+</script>
+
+
+
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+        </div>
+    </div>
+
+    <!-- Canada Universities Hero Section -->
+    <section class="canada-hero">
+        <div class="container">
+            <div class="canada-hero-content">
+                <h1>Study in Canada - Top Universities</h1>
+                <p>Discover world-class education, multicultural environment, and excellent career opportunities at Canada's premier institutions</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">14+</span>
+                        <span class="stat-label">Partner Universities</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">96%</span>
+                        <span class="stat-label">Admission Success</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">$15M+</span>
+                        <span class="stat-label">Scholarships Secured</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canada Universities Content -->
+    <section class="canada-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partner Universities in Canada</h2>
+                <p>Explore our exclusive network of top-ranked Canadian universities and colleges offering special benefits for MS EDU GLOBAL students</p>
+            </div>
+
+            <!-- Enhanced Universities Filter -->
+            <div class="universities-filter">
+                <div class="filter-header">
+                    <h3>Find Your Perfect Institution</h3>
+                    <div class="filter-search">
+                        <input type="text" id="search" placeholder="Search universities...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="province"><i class="fas fa-map-marker-alt"></i> Province</label>
+                        <select id="province" class="filter-select">
+                            <option value="">All Provinces</option>
+                            <option value="ontario">Ontario</option>
+                            <option value="quebec">Quebec</option>
+                            <option value="british-columbia">British Columbia</option>
+                            <option value="new-brunswick">New Brunswick</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="program"><i class="fas fa-graduation-cap"></i> Program Type</label>
+                        <select id="program" class="filter-select">
+                            <option value="">All Programs</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="graduate">Graduate</option>
+                            <option value="diploma">Diploma/Certificate</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="institution-type"><i class="fas fa-university"></i> Institution Type</label>
+                        <select id="institution-type" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="university">University</option>
+                            <option value="college">College</option>
+                            <option value="institute">Institute</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Header -->
+            <div class="results-header">
+                <div class="results-count">
+                    <span id="resultsCount">14</span> Institutions Found
+                </div>
+                <div class="sort-options">
+                    <label for="sort">Sort by:</label>
+                    <select id="sort" class="filter-select">
+                        <option value="name">Name A-Z</option>
+                        <option value="province">Province</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Universities Grid -->
+            <div class="universities-grid">
+                <!-- Institution 1 - St. Clair College -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+<img src="images/StClairCollege-logo.png" alt="St. Clair College" class="university-logo" style="max-height: 250px; width: auto; max-width: 90%;">
+                    </div>
+                    <div class="university-content">
+                        <h3>St. Clair College</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ontario, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Wide range of diploma and certificate programs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-industry"></i>
+                                <span>Strong industry connections and co-op opportunities</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 2 - University West Canada -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/UniversityWestCanada-logo.png" alt="University West Canada" class="university-logo" style="max-height: 250px; width: auto; max-width: 90%;">
+                    </div>
+                    <div class="university-content">
+                        <h3>University West Canada</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>British Columbia, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Comprehensive undergraduate and graduate programs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mountain"></i>
+                                <span>Beautiful West Coast location with modern facilities</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 3 - Toronto School of Management -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/TorontoSchoolOfManagement-logo.png" alt="Toronto School of Management" class="university-logo" style="max-height: 300px; width: auto; max-width: 90%;">
+                    </div>
+                    <div class="university-content">
+                        <h3>Toronto School of Management</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Toronto, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Specialized in business and management programs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Focus on practical business skills and career development</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 4 - Trebas Institute -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/TrebasInstitute-logo.png" alt="Trebas Institute" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Trebas Institute</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Toronto, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Specialized in audio, film, and entertainment business</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-music"></i>
+                                <span>Industry-focused programs with hands-on training</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 5 - Niagara College Canada -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/NiagaraCollegeCanada-logo.png" alt="Niagara College Canada" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Niagara College Canada</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ontario, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Comprehensive range of career-focused programs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wine-bottle"></i>
+                                <span>Known for wine, culinary, and hospitality programs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 6 - Canada College -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/CanadaCollege-logo.png" alt="Canada College" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Canada College</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Montreal, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Bilingual programs in English and French</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-language"></i>
+                                <span>Diverse programs with multicultural environment</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continue with remaining institutions... -->
+                <!-- Institution 7 - Canadian College of Technology and Business -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/CCTB-logo.png" alt="Canadian College of Technology and Business" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Canadian College of Technology and Business</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>British Columbia, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Specialized in technology and business programs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Focus on emerging technologies and digital skills</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 8 - Niagara University in Ontario -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/NiagaraUniversityOntario-logo.png" alt="Niagara University in Ontario" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Niagara University in Ontario</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ontario, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Comprehensive university programs</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-water"></i>
+                                <span>Beautiful campus location near Niagara region</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 9 - Matrix College -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/MatrixCollege-logo.png" alt="Matrix College" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Matrix College</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Quebec, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Career-focused programs in various disciplines</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-users"></i>
+                                <span>Supportive learning environment with small classes</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 10 - Ascent College -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/AscentCollege-logo.png" alt="Ascent College" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Ascent College</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Quebec, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Diverse programs with practical orientation</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-rocket"></i>
+                                <span>Focus on career advancement and skill development</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+
+<!-- Institution 11 - Cégep Marie-Victorin -->
+<div class="university-card">
+    <div class="university-logo-container">
+        <img src="images/CegepMarieVictorin-logo.png" alt="Cégep Marie-Victorin" class="university-logo" style="max-height: 250px; width: auto; max-width: 90%;">
+    </div>
+    <div class="university-content">
+        <h3>Cégep Marie-Victorin</h3>
+        <div class="university-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Montreal, Quebec, Canada</span>
+        </div>
+        <div class="university-features">
+            <div class="feature">
+                <i class="fas fa-graduation-cap"></i>
+                <span>French-language CEGEP offering pre-university and technical programs</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-paint-brush"></i>
+                <span>Strong focus on arts, communications, and creative technologies</span>
+            </div>
+            <div class="feature">
+                <i class="fas fa-award"></i>
+                <span>Contact for program details and admission requirements</span>
+            </div>
+        </div>
+        <div class="university-actions">
+            <a href="#" class="btn-outline">View Details</a>
+            <a href="contact.html" class="btn-outline">Apply Now</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+             <!-- Institution 12 - Cégep de la Gaspésie et des Îles -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/CegepGaspesieIles-logo.png" alt="Cégep de la Gaspésie et des Îles" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Cégep de la Gaspésie et des Îles</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Quebec, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Multiple campuses with diverse program offerings</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-map"></i>
+                                <span>Unique coastal and island campus locations</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institution 13 - Max the Mutt College -->
+                <div class="university-card">
+                    <div class="university-logo-container">
+                        <img src="images/MaxTheMutt-logo.png" alt="Max the Mutt College" class="university-logo">
+                    </div>
+                    <div class="university-content">
+                        <h3>Max the Mutt College</h3>
+                        <div class="university-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Moncton, Canada</span>
+                        </div>
+                        <div class="university-features">
+                            <div class="feature">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Specialized in animation, art and design</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Focus on creative arts and digital media</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-award"></i>
+                                <span>Contact for program details and scholarships</span>
+                            </div>
+                        </div>
+                        <div class="university-actions">
+                            <a href="#" class="btn-outline">View Details</a>
+                            <a href="contact.html" class="btn-outline">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Study in Canada Section -->
+    <section class="why-canada-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Study in Canada?</h2>
+                <p>Discover the advantages of pursuing higher education in Canada</p>
+            </div>
+            <div class="why-canada-grid">
+                <div class="why-canada-card">
+                    <div class="why-canada-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>World-Class Education</h3>
+                    <p>Canadian institutions consistently rank among the top globally, offering high-quality education and research opportunities.</p>
+                </div>
+                <div class="why-canada-card">
+                    <div class="why-canada-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Career Opportunities</h3>
+                    <p>Post-graduation work permits and strong job market provide excellent career prospects for international graduates.</p>
+                </div>
+                <div class="why-canada-card">
+                    <div class="why-canada-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Multicultural Society</h3>
+                    <p>Canada's diverse and inclusive society welcomes students from all backgrounds and cultures.</p>
+                </div>
+                <div class="why-canada-card">
+                    <div class="why-canada-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Quality of Life</h3>
+                    <p>Canada offers high standard of living, safety, and beautiful natural environments across the country.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="application-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Canada Admission Process</h2>
+                <p>Our streamlined process makes studying in Canada simple and stress-free</p>
+            </div>
+            <div class="process-steps">
+                <div class="connector-line"></div>
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Profile Assessment</h3>
+                    <p>We evaluate your academic background, qualifications, and career goals to find the best institution match.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Institution Selection</h3>
+                    <p>Choose from our partner Canadian universities and colleges with special benefits for MS EDU GLOBAL students.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Application & Documents</h3>
+                    <p>We help prepare and submit all required documents, statements, and application forms.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Visa & Pre-departure</h3>
+                    <p>Complete Canadian study permit processing and pre-departure orientation for a smooth transition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Hear from students who achieved their Canadian education dream with MS EDU GLOBAL</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">"MS EDU GLOBAL helped me secure admission at St. Clair College with a scholarship. Their guidance through the Canadian application process was invaluable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Raj Patel</h4>
+                            <p>St. Clair College</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">"The study permit assistance and pre-departure orientation made my transition to Toronto School of Management smooth. I felt fully prepared."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Wei Zhang</h4>
+                            <p>Toronto School of Management</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <p class="testimonial-text">"From institution selection to accommodation in Vancouver, MS EDU GLOBAL supported me at every step. I'm now studying at University West Canada."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Isabella Rossi</h4>
+                            <p>University West Canada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Canada Education Journey?</h2>
+                <p>Contact our expert consultants today and take the first step towards studying in Canada</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="tel:+15551234567" class="btn btn-secondary">Call Us Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo" style="font-size: 24px; margin-bottom: 15px; display: inline-block;">
+                        <i class="fas fa-graduation-cap"></i>
+                        MS EDU GLOBAL
+                    </a>
+                    <p>Your trusted partner for global education opportunities since 2010.</p>
+                    <div class="social-links-top">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="usauniversities.html">Study in USA</a></li>
+                        <li><a href="ukuniversities.html">Study in UK</a></li>
+                        <li><a href="canadauniversities.html">Study in Canada</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hyderabad - India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MS EDU GLOBAL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced filter functionality for Canada universities
+        document.addEventListener('DOMContentLoaded', function() {
+            const provinceFilter = document.getElementById('province');
+            const programFilter = document.getElementById('program');
+            const typeFilter = document.getElementById('institution-type');
+            const searchInput = document.getElementById('search');
+            const sortSelect = document.getElementById('sort');
+            const universityCards = document.querySelectorAll('.university-card');
+            const resultsCount = document.getElementById('resultsCount');
+
+            function filterUniversities() {
+                const provinceValue = provinceFilter.value;
+                const programValue = programFilter.value;
+                const typeValue = typeFilter.value;
+                const searchValue = searchInput.value.toLowerCase();
+                let visibleCount = 0;
+
+                universityCards.forEach(card => {
+                    let showCard = true;
+                    const locationText = card.querySelector('.university-location span').textContent.toLowerCase();
+                    const universityName = card.querySelector('h3').textContent.toLowerCase();
+                    const featuresText = card.querySelector('.university-features').textContent.toLowerCase();
+
+                    // Search filter
+                    if (searchValue && !universityName.includes(searchValue) && !locationText.includes(searchValue)) {
+                        showCard = false;
+                    }
+
+                    // Province filter
+                    if (showCard && provinceValue) {
+                        const provinceMap = {
+                            'ontario': 'ontario',
+                            'quebec': 'quebec',
+                            'british-columbia': 'british columbia',
+                            'new-brunswick': 'new brunswick'
+                        };
+                        
+                        const searchProvince = provinceMap[provinceValue];
+                        if (searchProvince && !locationText.includes(searchProvince)) {
+                            showCard = false;
+                        }
+                    }
+
+                    if (showCard) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                resultsCount.textContent = visibleCount;
+            }
+
+            // Add event listeners
+            provinceFilter.addEventListener('change', filterUniversities);
+            programFilter.addEventListener('change', filterUniversities);
+            typeFilter.addEventListener('change', filterUniversities);
+            searchInput.addEventListener('input', filterUniversities);
+            sortSelect.addEventListener('change', filterUniversities);
+
+            // Initialize count
+            resultsCount.textContent = universityCards.length;
+
+            // Dropdown functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.classList.add('active');
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+    <!-- Simple WhatsApp Floating Button for MS EDU GLOBAL -->
+    <div class="whatsapp-widget-simple">
+            <a href="https://wa.me/17542000000?text=Hello%20Sir%2C%20I%20just%20visited%20your%20website%20https%3A%2F%2Fmseduglobal.com%20and%20I%27m%20interested%20in%20study%20abroad%20opportunities." 
+           class="whatsapp-float-simple" target="_blank">
+            <svg class="whatsapp-float-icon" width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893c0-3.18-1.24-6.169-3.495-8.424"/>
+            </svg>
+            <div class="notification-dot"></div>
+        </a>
+    </div>
+
+    <style>
+        /* Simple WhatsApp Widget Styles */
+        .whatsapp-widget-simple {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 10000;
+        }
+
+        .whatsapp-float-simple {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25d366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+            text-decoration: none;
+        }
+
+        .whatsapp-float-simple:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        .whatsapp-float-icon {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .notification-dot {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 12px;
+            height: 12px;
+            background: #ff4757;
+            border: 2px solid white;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .whatsapp-widget-simple {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float-simple {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-widget-simple {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .whatsapp-float-simple {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-float-icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+
+</body>
+</html>

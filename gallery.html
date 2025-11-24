@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - MS EDU GLOBAL | Student Success Stories & Events</title>
+    <meta name="description" content="Explore our gallery of student success stories, university events, campus tours, and study abroad experiences with MS EDU GLOBAL.">
+    
+    <style>
+        /* === MS EDU GLOBAL - Enhanced Styles === */
+        :root {
+            --primary: #2f5aae;
+            --primary-dark: #1e3a8a;
+            --secondary: #f59e0b;
+            --accent: #dc2626;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* === Top Bar === */
+        .top-bar {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links-top a {
+            color: var(--white);
+            margin-left: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links-top a:hover {
+            color: var(--secondary);
+        }
+
+        /* === Header === */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* === Dropdown Menus === */
+        .dropdown { position: relative; }
+        
+        /* Services Dropdown - Compact Size */
+        .services-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 280px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        /* Universities Dropdown */
+        .universities-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+            padding: 5px 0;
+        }
+        
+        /* Show dropdown on hover */
+        .dropdown:hover .services-dropdown-content,
+        .dropdown:hover .universities-dropdown-content {
+            display: block;
+        }
+        
+/* Category/Country items */
+.category, .country {
+    position: relative;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 14px;
+    line-height: 1.3;
+    text-decoration: none;
+    display: block;
+}
+
+.category:hover, .country:hover {
+    background-color: #f0f7ff;
+}
+
+.category:last-child,
+.country:last-child {
+    border-bottom: none;
+}
+        
+        /* Submenu for each category */
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: white;
+            min-width: 250px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            z-index: 1001;
+            border-left: 3px solid var(--primary);
+            padding: 5px 0;
+        }
+        
+        /* Submenu items */
+        .submenu-item {
+            padding: 6px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+            color: #333;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 1.3;
+        }
+        
+        .submenu-item:hover {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        
+        /* Show submenu on category hover */
+        .category:hover .submenu {
+            display: block;
+        }
+        
+        /* Remove border from last items */
+        .category:last-child,
+        .country:last-child,
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Country flag styling */
+        .country-flag {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        /* === Announcement Bar === */
+        .announcement-bar { 
+            background: linear-gradient(90deg, var(--primary), var(--secondary)); 
+            color: var(--white); 
+            padding: 12px 0; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        .scrolling-text { 
+            display: flex; 
+            animation: scrollText 25s linear infinite; 
+            white-space: nowrap; 
+        }
+        .scrolling-text span { 
+            padding: 0 40px; 
+            font-weight: 500; 
+            font-size: 15px; 
+        }
+        @keyframes scrollText { 
+            0% { transform: translateX(100%); } 
+            100% { transform: translateX(-100%); } 
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #e69008;
+            transform: translateY(-3px);
+        }
+
+        /* === Gallery Hero Section === */
+        .gallery-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .gallery-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .gallery-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* === Gallery Content === */
+        .gallery-content {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Gallery Filter */
+        .gallery-filter {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-image img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-info {
+            color: var(--white);
+        }
+
+        .gallery-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .gallery-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Success Stories Section */
+        .success-stories {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .story-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .student-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid var(--primary);
+        }
+
+        .student-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .university-badge {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .story-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .event-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .event-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .event-content {
+            padding: 25px;
+        }
+
+        .event-date {
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .event-content h3 {
+            color: var(--text);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .event-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* === Footer === */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--text));
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin: 10px 0;
+        }
+
+        .footer-column a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* === Responsive Design === */
+        @media (max-width: 768px) {
+            .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
+            .contact-info span { margin: 5px; display: block; }
+            .gallery-hero h1 { font-size: 2.2rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .filter-buttons { justify-content: center; }
+            .main-nav ul { gap: 15px; }
+        }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
+                    <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Hyderabad - India</span>
+                </div>
+                <div class="social-links-top">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    MS EDU GLOBAL
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+
+
+<!-- Services Dropdown -->
+<li class="dropdown">
+    <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+    <div class="services-dropdown-content" style="min-width: 280px; padding: 5px 0;">
+        <a href="studentguidance.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Guidance</a>
+        <a href="testprep-readiness.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Test Prep & Readiness</a>
+        <a href="finance-scholarships.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Finance & Scholarships</a>
+        <a href="studentessentials.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Essentials</a>
+        <a href="careerservices.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px;">Career Services</a>
+    </div>
+</li>
+
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html" class="active">Gallery</a></li>
+
+<!-- Universities Dropdown -->
+<li class="dropdown">
+    <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+    <div class="universities-dropdown-content">
+        <!-- USA -->
+        <div class="country" data-country="USA">
+            <span class="country-flag">🇺🇸</span> USA
+        </div>
+        
+        <!-- UK -->
+        <div class="country" data-country="UK">
+            <span class="country-flag">🇬🇧</span> UK
+        </div>
+        
+        <!-- Canada -->
+        <div class="country" data-country="Canada">
+            <span class="country-flag">🇨🇦</span> Canada
+        </div>
+    </div>
+</li>
+
+<script>
+// Make country items clickable
+document.addEventListener('DOMContentLoaded', function() {
+    const countries = document.querySelectorAll('.country');
+    
+    countries.forEach(country => {
+        country.addEventListener('click', function() {
+            const countryName = this.getAttribute('data-country');
+            
+            // Map country names to their respective pages
+            const countryPages = {
+                'USA': 'usauniversities.html',
+                'UK': 'ukuniversities.html', 
+                'Canada': 'canadauniversities.html'
+            };
+            
+            const page = countryPages[countryName];
+            if (page) {
+                window.location.href = page;
+            }
+        });
+        
+        // Add hover effects
+        country.style.cursor = 'pointer';
+    });
+});
+</script>
+
+
+
+
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+            <span>🎓 Spring Sessions: January & March | Summer Intakes: May & July | Fall Enrollments: August & October - Your Gateway to Seasons of Learning! 🎓</span>
+        </div>
+    </div>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <div class="gallery-hero-content">
+                <h1>Our Success Gallery</h1>
+                <p>Discover the inspiring journeys of our students, explore campus life, and witness the memorable events that shape global education experiences</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="gallery-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Life & Campus Experiences</h2>
+                <p>Get a glimpse into the vibrant student life and beautiful campuses of our partner universities</p>
+            </div>
+
+            <!-- Gallery Filter -->
+            <div class="gallery-filter">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="campus">Campus Life</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="students">Student Stories</button>
+                    <button class="filter-btn" data-filter="graduation">Graduation</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item" data-category="campus">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="University Campus">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Harvard University Campus</h3>
+                                <p>Beautiful campus tour of one of our top partner universities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category">Campus Life</div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education Fair">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Annual Education Fair 2024</h3>
+                                <p>Students interacting with university representatives</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category">Events</div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item" data-category="students">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Student Success">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Student Success Celebration</h3>
+                                <p>Our students celebrating their admission offers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category">Student Stories</div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item" data-category="graduation">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Graduation Ceremony">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Graduation Day 2024</h3>
+                                <p>Our students celebrating their academic achievements</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category">Graduation</div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item" data-category="campus">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Campus Library">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Stanford University Library</h3>
+                                <p>State-of-the-art learning facilities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category">Campus Life</div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item" data-category="events">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workshop Session">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Visa Workshop Session</h3>
+                                <p>Expert guidance on visa application process</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-category">Events</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Success Stories</h2>
+                <p>Inspiring journeys of students who achieved their dreams with MS EDU GLOBAL</p>
+            </div>
+
+            <div class="stories-grid">
+                <!-- Story 1 -->
+                <div class="story-card">
+                    <div class="student-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Priya Sharma">
+                    </div>
+                    <h3>Priya Sharma</h3>
+                    <div class="university-badge">Harvard University</div>
+                    <p class="story-text">"MS EDU GLOBAL helped me secure admission to Harvard with a full scholarship. Their guidance was invaluable throughout the process."</p>
+                    <div class="story-stats">
+                        <p><strong>Program:</strong> Computer Science</p>
+                        <p><strong>Scholarship:</strong> $50,000 per year</p>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="story-card">
+                    <div class="student-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Rahul Verma">
+                    </div>
+                    <h3>Rahul Verma</h3>
+                    <div class="university-badge">Stanford University</div>
+                    <p class="story-text">"From profile evaluation to visa approval, MS EDU GLOBAL supported me at every step. I'm now pursuing my Master's at Stanford."</p>
+                    <div class="story-stats">
+                        <p><strong>Program:</strong> Business Administration</p>
+                        <p><strong>Scholarship:</strong> $40,000 total</p>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="story-card">
+                    <div class="student-avatar">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Anjali Patel">
+                    </div>
+                    <h3>Anjali Patel</h3>
+                    <div class="university-badge">MIT</div>
+                    <p class="story-text">"The personalized counseling and university shortlisting helped me find the perfect fit. Thank you MS EDU GLOBAL for making my dream come true!"</p>
+                    <div class="story-stats">
+                        <p><strong>Program:</strong> Mechanical Engineering</p>
+                        <p><strong>Scholarship:</strong> $35,000 per year</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <p>Join our events and workshops to kickstart your study abroad journey</p>
+            </div>
+
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education Fair">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">March 15, 2024</div>
+                        <h3>Spring Education Fair 2024</h3>
+                        <p>Meet representatives from top US universities and get instant admission decisions.</p>
+                        <a href="contact.html" class="btn-primary" style="padding: 10px 20px;">Register Now</a>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Visa Workshop">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">March 22, 2024</div>
+                        <h3>Visa Success Workshop</h3>
+                        <p>Learn the secrets to successful visa interviews and document preparation.</p>
+                        <a href="contact.html" class="btn-primary" style="padding: 10px 20px;">Register Now</a>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82e302a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Scholarship Seminar">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">April 5, 2024</div>
+                        <h3>Scholarship Guidance Seminar</h3>
+                        <p>Discover how to secure scholarships and financial aid for international studies.</p>
+                        <a href="contact.html" class="btn-primary" style="padding: 10px 20px;">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>MS EDU GLOBAL</h3>
+                    <p>Your trusted partner for global education opportunities since 2010.</p>
+                    <div class="social-links-top">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="universities.html">Universities</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Study Destinations</h3>
+                    <ul>
+                        <li><a href="usauniversities.html">Study in USA</a></li>
+                        <li><a href="ukuniversities.html">Study in UK</a></li>
+                        <li><a href="canadauniversities.html">Study in Canada</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hyderabad - India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 MS EDU GLOBAL. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Dropdown functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.classList.add('active');
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+<!-- Simple WhatsApp Floating Button -->
+<div class="whatsapp-widget-simple">
+    <a href="https://wa.me/17542000000?text=Hello%20Sir%2C%20I%20just%20visited%20your%20website%20https%3A%2F%2Fmseduglobal.com%20and%20I%27m%20interested%20in%20study%20abroad%20opportunities." 
+       class="whatsapp-float-simple" target="_blank">
+        <svg class="whatsapp-float-icon" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893c0-3.18-1.24-6.169-3.495-8.424"/>
+        </svg>
+        <div class="notification-dot"></div>
+    </a>
+</div>
+
+<style>
+    /* Simple WhatsApp Widget Styles */
+    .whatsapp-widget-simple {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 10000;
+    }
+
+    .whatsapp-float-simple {
+        width: 65px;
+        height: 65px;
+        background: linear-gradient(135deg, #25d366, #128C7E);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        animation: float 3s ease-in-out infinite;
+        text-decoration: none;
+    }
+
+    .whatsapp-float-simple:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+    }
+
+    .whatsapp-float-icon {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .notification-dot {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 12px;
+        height: 12px;
+        background: #ff4757;
+        border: 2px solid white;
+        border-radius: 50%;
+        animation: pulse-dot 2s infinite;
+    }
+
+    /* Animations */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .whatsapp-widget-simple {
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .whatsapp-float-simple {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .whatsapp-widget-simple {
+            bottom: 15px;
+            right: 15px;
+        }
+        
+        .whatsapp-float-simple {
+            width: 55px;
+            height: 55px;
+        }
+        
+        .whatsapp-float-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+</style>
+
+</body>
+</html>
