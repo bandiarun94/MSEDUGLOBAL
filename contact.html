@@ -173,22 +173,32 @@
             display: block;
         }
         
-        /* Category/Country items */
-        .category, .country {
-            position: relative;
-            padding: 8px 15px;
-            cursor: pointer;
-            border-bottom: 1px solid #f0f0f0;
-            transition: background-color 0.3s;
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 14px;
-            line-height: 1.3;
-        }
-        
-        .category:hover, .country:hover {
-            background-color: #f8f9fa;
-        }
+
+/* Category/Country items */
+.category, .country {
+    position: relative;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 14px;
+    line-height: 1.3;
+    text-decoration: none;
+    display: block;
+}
+
+.category:hover, .country:hover {
+    background-color: #f0f7ff;
+}
+
+.category:last-child,
+.country:last-child {
+    border-bottom: none;
+}
+
+
         
         /* Submenu for each category */
         .submenu {
@@ -356,19 +366,24 @@
         }
 
         .contact-details h3 {
-            margin-bottom: 5px;
-            font-size: 1.2rem;
+    	 margin-bottom: 8px;
+    	font-size: 1.2rem;
+    	color: var(--text);
         }
 
         .contact-details p {
-            color: var(--text-light);
-            margin-bottom: 5px;
+  	         color: var(--text-light);
+   		 margin-bottom: 5px;
+    	         line-height: 1.5;
         }
 
         .contact-details a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: var(--transition);
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 5px;
         }
 
         .contact-details a:hover {
@@ -451,33 +466,87 @@
             justify-content: center;
         }
 
-        .map-section {
-            padding: 80px 0;
-            background: var(--white);
-        }
+       .map-section {
+    padding: 80px 0;
+    background: var(--white);
+}
 
-        .map-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            height: 450px;
-        }
+/* New Map Container Styles */
+.map-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
 
-        .map-placeholder {
-            background: var(--bg-light);
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: var(--text-light);
-        }
+.map-embed {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
 
-        .map-placeholder i {
-            font-size: 60px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
+.map-info {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.map-info i.fa-map-marked-alt {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.map-info h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.map-info p {
+    margin-bottom: 10px;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.contact-details {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.contact-details i {
+    color: var(--secondary);
+    width: 20px;
+}
+
+/* Remove old placeholder styles */
+.map-placeholder {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .map-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .map-info {
+        padding: 20px;
+    }
+}
 
         .faq-section {
             padding: 80px 0;
@@ -569,6 +638,18 @@
             color: #9ca3af;
         }
 
+/* White Footer Links */
+.footer-bottom a {
+    color: var(--white) !important;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+    color: var(--secondary) !important;
+}
+
+
         /* === Responsive Design === */
         @media (max-width: 768px) {
             .top-bar-content { flex-direction: column; gap: 10px; text-align: center; }
@@ -593,7 +674,7 @@
                 <div class="contact-info">
                     <span><i class="fas fa-phone"></i> +1 (555) 123-4567</span>
                     <span><i class="fas fa-envelope"></i> info@mseduglobal.com</span>
-                    <span><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Hyderabad - India</span>
                 </div>
                 <div class="social-links-top">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -618,60 +699,74 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
 
-                        <!-- Services Dropdown -->
-                        <li class="dropdown">
-                            <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
-                            <div class="services-dropdown-content">
-                                <!-- Student Guidance -->
-                                <div class="category">
-                                    Student Guidance  
-                                </div>
-                                
-                                <!-- Test Prep & Readiness -->
-                                <div class="category">
-                                    Test Prep & Readiness
-                                </div>
-                                
-                                <!-- Finance & Scholarships -->
-                                <div class="category">
-                                    Finance & Scholarships
-                                </div>
-                                
-                                <!-- Student Essentials -->
-                                <div class="category">
-                                    Student Essentials
-                                </div>
-                                
-                                <!-- Career Services -->
-                                <div class="category">
-                                    Career Services
-                                </div>
-                            </div>
-                        </li>
+
+<!-- Services Dropdown -->
+<li class="dropdown">
+    <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+    <div class="services-dropdown-content" style="min-width: 280px; padding: 5px 0;">
+        <a href="studentguidance.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Guidance</a>
+        <a href="testprep-readiness.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Test Prep & Readiness</a>
+        <a href="finance-scholarships.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Finance & Scholarships</a>
+        <a href="studentessentials.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px; border-bottom: 1px solid #f0f0f0;">Student Essentials</a>
+        <a href="careerservices.html" class="category" style="display: block; text-decoration: none; color: #2f5aae !important; font-weight: 600; font-size: 14px; padding: 8px 15px;">Career Services</a>
+    </div>
+</li>
+
 
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
 
-                        <!-- Universities Dropdown -->
-                        <li class="dropdown">
-                            <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
-                            <div class="universities-dropdown-content">
-                                <!-- USA -->
-                                <div class="country">
-                                    <span class="country-flag">🇺🇸</span> USA
-                                </div>
-                                
-                                <!-- UK -->
-                                <div class="country">
-                                    <span class="country-flag">🇬🇧</span> UK
-                                </div>
-                                
-                                <!-- Canada -->
-                                <div class="country">
-                                    <span class="country-flag">🇨🇦</span> Canada
-                                </div>
-                            </div>
-                        </li>
+<!-- Universities Dropdown -->
+<li class="dropdown">
+    <a href="universities.html" class="dropdown-toggle">Universities <i class="fas fa-chevron-down"></i></a>
+    <div class="universities-dropdown-content">
+        <!-- USA -->
+        <div class="country" data-country="USA">
+            <span class="country-flag">🇺🇸</span> USA
+        </div>
+        
+        <!-- UK -->
+        <div class="country" data-country="UK">
+            <span class="country-flag">🇬🇧</span> UK
+        </div>
+        
+        <!-- Canada -->
+        <div class="country" data-country="Canada">
+            <span class="country-flag">🇨🇦</span> Canada
+        </div>
+    </div>
+</li>
+
+<script>
+// Make country items clickable
+document.addEventListener('DOMContentLoaded', function() {
+    const countries = document.querySelectorAll('.country');
+    
+    countries.forEach(country => {
+        country.addEventListener('click', function() {
+            const countryName = this.getAttribute('data-country');
+            
+            // Map country names to their respective pages
+            const countryPages = {
+                'USA': 'usauniversities.html',
+                'UK': 'ukuniversities.html', 
+                'Canada': 'canadauniversities.html'
+            };
+            
+            const page = countryPages[countryName];
+            if (page) {
+                window.location.href = page;
+            }
+        });
+        
+        // Add hover effects
+        country.style.cursor = 'pointer';
+    });
+});
+</script>
+
+
+
 
                         <li><a href="contact.html" class="active">Contact</a></li>
                         <li><a href="#" class="btn-primary" style="padding: 10px 25px;">Free Consultation</a></li>
@@ -735,8 +830,9 @@
                         </div>
                         <div class="contact-details">
                             <h3>Address</h3>
-                            <p>123 Education Plaza, Suite 500</p>
-                            <p>Knowledge City, EC 10001</p>
+                            <p>Flat No 109, Sri Tirumala Kasani Residency </p>
+                            <p>Dandamudi Enclave, Kompally</p>
+                            <p>Hyderabad -500067</p>
                             <a href="#map">View on Map</a>
                         </div>
                     </div>
@@ -794,7 +890,9 @@
                 </div>
             </div>
         </div>
-    </section>
+
+
+</section>
 
     <!-- Map Section -->
     <section class="map-section" id="map">
@@ -805,15 +903,36 @@
             </div>
             
             <div class="map-container">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Interactive Map Location</h3>
-                    <p>123 Education Plaza, Knowledge City</p>
+                <div class="map-embed">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.062823060198!2d78.50218897501874!3d17.501927983406337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9bcf5b5c5c5d%3A0x4a7e9b9e9e9e9e9e!2sKompally%2C%20Secunderabad%2C%20Telangana%20500067!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
-                <!-- In a real implementation, you would embed a Google Maps iframe here -->
+                <div class="map-info">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>Flat No 109, Sri Tirumala Kasani Residency</p>
+                    <p>Dandamudi Enclave, Kompally</p>
+                    <p>Hyderabad -500067</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
+
+
 
     <!-- FAQ Section -->
     <section class="faq-section">
@@ -886,7 +1005,7 @@
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
                     <p><i class="fas fa-envelope"></i> info@mseduglobal.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Knowledge City, Education Street</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hyderabad - India</p>
                 </div>
             </div>
             
@@ -949,5 +1068,108 @@
             });
         });
     </script>
+
+<!-- Simple WhatsApp Floating Button for MS EDU GLOBAL -->
+<div class="whatsapp-widget-simple">
+    <a href="https://wa.me/17542000000?text=Hello%20Sir%2C%20I%20just%20visited%20your%20website%20https%3A%2F%2Fmseduglobal.com%20and%20I%27m%20interested%20in%20study%20abroad%20opportunities." 
+       class="whatsapp-float-simple" target="_blank">
+        <svg class="whatsapp-float-icon" width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893c0-3.18-1.24-6.169-3.495-8.424"/>
+        </svg>
+        <div class="notification-dot"></div>
+    </a>
+</div>
+
+<style>
+    /* Simple WhatsApp Widget Styles */
+    .whatsapp-widget-simple {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 10000;
+    }
+
+    .whatsapp-float-simple {
+        width: 65px;
+        height: 65px;
+        background: linear-gradient(135deg, #25d366, #128C7E);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        animation: float 3s ease-in-out infinite;
+        text-decoration: none;
+    }
+
+    .whatsapp-float-simple:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+    }
+
+    .whatsapp-float-icon {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    .notification-dot {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 12px;
+        height: 12px;
+        background: #ff4757;
+        border: 2px solid white;
+        border-radius: 50%;
+        animation: pulse-dot 2s infinite;
+    }
+
+    /* Animations */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .whatsapp-widget-simple {
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .whatsapp-float-simple {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .whatsapp-widget-simple {
+            bottom: 15px;
+            right: 15px;
+        }
+        
+        .whatsapp-float-simple {
+            width: 55px;
+            height: 55px;
+        }
+        
+        .whatsapp-float-icon {
+            width: 24px;
+            height: 24px;
+        }
+    }
+</style>
+
+
+
+
 </body>
 </html>
